@@ -1,0 +1,284 @@
+{
+  "en-US": {
+    "tabs": [
+      {
+        "name": "emotion",
+        "label": "Emotion",
+        "items": [
+          {
+            "name": "Laugh to Reduce Depression",
+            "description": "This function helps reduce depression through laughter."
+          },
+          {
+            "name": "Laugh to Eliminate Fear",
+            "description": "This function helps eliminate fear through laughter."
+          },
+          {
+            "name": "Boost Courage/Confidence",
+            "description": "This function boosts courage and self-confidence."
+          },
+          {
+            "name": "Cultivate Gratitude",
+            "description": "This function helps cultivate gratitude."
+          },
+          {
+            "name": "Foster a Sense of Shame",
+            "description": "This function fosters a sense of shame and humility."
+          }
+        ]
+      },
+      {
+        "name": "pain",
+        "label": "Pain",
+        "items": [
+          {
+            "name": "Headache",
+            "description": "Relieves headache symptoms."
+          },
+          {
+            "name": "Forehead Pain",
+            "description": "Relieves forehead pain."
+          },
+          {
+            "name": "Shoulder and Neck Pain",
+            "description": "Relieves shoulder and neck pain."
+          },
+          {
+            "name": "Lower Back Pain",
+            "description": "Relieves lower back pain."
+          },
+          {
+            "name": "Thigh Pain",
+            "description": "Relieves thigh pain."
+          },
+          {
+            "name": "Knee Pain",
+            "description": "Relieves knee pain."
+          },
+          {
+            "name": "Foot Pain",
+            "description": "Relieves foot pain."
+          }
+        ]
+      },
+      {
+        "name": "disease",
+        "label": "Disease",
+        "items": [
+          {
+            "name": "Cold",
+            "description": "Helps alleviate cold symptoms."
+          },
+          {
+            "name": "COVID-19 Virus",
+            "description": "Helps alleviate symptoms caused by the COVID-19 virus."
+          },
+          {
+            "name": "Indigestion",
+            "description": "Improves digestion issues."
+          },
+          {
+            "name": "Constipation",
+            "description": "Relieves constipation."
+          },
+          {
+            "name": "Stomach Pain",
+            "description": "Relieves stomach pain."
+          },
+          {
+            "name": "Intestinal Pain",
+            "description": "Relieves intestinal pain."
+          }
+        ]
+      }
+    ]
+  },
+  "zh-HK": {
+    "tabs": [
+      {
+        "name": "emotion",
+        "label": "情緒",
+        "items": [
+          {
+            "name": "發笑消除抑鬱",
+            "description": "此功能通過笑聲幫助減輕抑鬱。"
+          },
+          {
+            "name": "發笑消除恐懼",
+            "description": "此功能通過笑聲幫助消除恐懼。"
+          },
+          {
+            "name": "增強勇氣/自信",
+            "description": "此功能增強勇氣和自信心。"
+          },
+          {
+            "name": "感激恩情",
+            "description": "此功能幫助培養感恩之心。"
+          },
+          {
+            "name": "開發羞恥心",
+            "description": "此功能培養羞恥心和謙卑感。"
+          }
+        ]
+      },
+      {
+        "name": "pain",
+        "label": "痛症",
+        "items": [
+          {
+            "name": "頭痛",
+            "description": "緩解頭痛症狀。"
+          },
+          {
+            "name": "前額痛",
+            "description": "緩解前額疼痛。"
+          },
+          {
+            "name": "肩頸痛",
+            "description": "緩解肩頸疼痛。"
+          },
+          {
+            "name": "腰痛",
+            "description": "緩解腰部疼痛。"
+          },
+          {
+            "name": "股痛",
+            "description": "緩解大腿疼痛。"
+          },
+          {
+            "name": "膝頭痛",
+            "description": "緩解膝蓋疼痛。"
+          },
+          {
+            "name": "腳板痛",
+            "description": "緩解腳底疼痛。"
+          }
+        ]
+      },
+      {
+        "name": "disease",
+        "label": "疾病",
+        "items": [
+          {
+            "name": "感冒",
+            "description": "幫助緩解感冒症狀。"
+          },
+          {
+            "name": "新冠病毒 (COVID-19)",
+            "description": "幫助緩解新型冠狀病毒引起的症狀。"
+          },
+          {
+            "name": "消化不良",
+            "description": "改善消化問題。"
+          },
+          {
+            "name": "便秘",
+            "description": "緩解便秘。"
+          },
+          {
+            "name": "胃痛",
+            "description": "緩解胃部疼痛。"
+          },
+          {
+            "name": "腸痛",
+            "description": "緩解腸道疼痛。"
+          }
+        ]
+      }
+    ]
+  },
+  "zh-CN": {
+    "tabs": [
+      {
+        "name": "emotion",
+        "label": "情绪",
+        "items": [
+          {
+            "name": "发笑消除抑郁",
+            "description": "此功能通过笑声帮助减轻抑郁。"
+          },
+          {
+            "name": "发笑消除恐惧",
+            "description": "此功能通过笑声帮助消除恐惧。"
+          },
+          {
+            "name": "增强勇气/自信",
+            "description": "此功能增强勇气和自信心。"
+          },
+          {
+            "name": "感激恩情",
+            "description": "此功能帮助培养感恩之心。"
+          },
+          {
+            "name": "开发羞耻心",
+            "description": "此功能培养羞耻心和谦卑感。"
+          }
+        ]
+      },
+      {
+        "name": "pain",
+        "label": "痛症",
+        "items": [
+          {
+            "name": "头痛",
+            "description": "缓解头痛症状。"
+          },
+          {
+            "name": "前额痛",
+            "description": "缓解前额疼痛。"
+          },
+          {
+            "name": "肩颈痛",
+            "description": "缓解肩颈疼痛。"
+          },
+          {
+            "name": "腰痛",
+            "description": "缓解腰部疼痛。"
+          },
+          {
+            "name": "股痛",
+            "description": "缓解大腿疼痛。"
+          },
+          {
+            "name": "膝盖痛",
+            "description": "缓解膝盖疼痛。"
+          },
+          {
+            "name": "脚底痛",
+            "description": "缓解脚底疼痛。"
+          }
+        ]
+      },
+      {
+        "name": "disease",
+        "label": "疾病",
+        "items": [
+          {
+            "name": "感冒",
+            "description": "帮助缓解感冒症状。"
+          },
+          {
+            "name": "新冠病毒 (COVID-19)",
+            "description": "帮助缓解新冠病毒引起的症状。"
+          },
+          {
+            "name": "消化不良",
+            "description": "改善消化问题。"
+          },
+          {
+            "name": "便秘",
+            "description": "缓解便秘。"
+          },
+          {
+            "name": "胃痛",
+            "description": "缓解胃部疼痛。"
+          },
+          {
+            "name": "肠痛",
+            "description": "缓解肠道疼痛。"
+          }
+        ]
+      }
+    ]
+  }
+}
