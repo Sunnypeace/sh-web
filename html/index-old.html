@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SonicHealer - Sound Healing App</title>
+ <!-- Use local Bootstrap from assets -->
+ <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
+</head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <img src="assets/sk-logo100.png" alt="SonicHealer Logo" class="logo" />
+        <div class="language-selector">
+          <button onclick="setLanguage('en')">English</button>
+          <button onclick="setLanguage('zh-HK')">繁體中文</button>
+          <button onclick="setLanguage('zh-CN')">简体中文</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Download Section -->
+    <section class="download">
+      <div class="container">
+        <h2>Download SonicHealer</h2>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store" class="download-btn">
+            <img src="assets/google-play.png" alt="Get it on Google Play" />
+          </a>
+          <a href="https://apps.apple.com" class="download-btn">
+            <img src="assets/app-store.png" alt="Download on App Store"/>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial Videos -->
+    <section class="tutorials">
+      <div class="container">
+        <h2>How to Use SonicHealer</h2>
+        <div class="video-container">
+          <div class="video">
+            <h3>App Tutorial</h3>
+            <iframe
+              src="https://www.youtube.com/embed/your-tutorial-video-id"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video">
+            <h3>User Testimonials</h3>
+            <iframe
+              src="https://www.youtube.com/embed/your-testimonial-video-id"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <h2>App Features</h2>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <img src="assets/sk-logo100.png" alt="Healing" />
+            <h3>Sound Healing</h3>
+            <p>Experience the power of therapeutic sound frequencies</p>
+          </div>
+          <div class="feature-card">
+            <img src="assets/feature2.png" alt="Customization" />
+            <h3>Personalized Experience</h3>
+            <p>Customize your healing sessions</p>
+          </div>
+          <div class="feature-card">
+            <img src="assets/feature3.png" alt="Progress" />
+            <h3>Track Progress</h3>
+            <p>Monitor your healing journey</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Add this before the About section -->
+    <!-- ... existing code ... -->
+    <section class="faq">
+      <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-container" id="faqContainer">
+              <!-- FAQ items will be loaded dynamically -->
+          </div>
+      </div>
+  </section>
+  <!-- ... existing code ... -->
+    <!-- Feedback Form -->
+    <section class="feedback">
+      <div class="container">
+        <h2>Send Us Feedback</h2>
+        <form id="feedbackForm">
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Feedback" required></textarea>
+          <button type="submit">Send Feedback</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <div class="about-content">
+          <img src="assets/company.png" alt="Company" />
+          <div class="about-text">
+            <p>
+              SonicHealer is dedicated to bringing the healing power of sound therapy to everyone.
+            </p>
+            <button onclick="showContact()">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>Contact: contact@sonichealer.com</p>
+        <p>Phone: +1234567890</p>
+        <p>Address: Your Company Address</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
