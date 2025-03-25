@@ -86,6 +86,11 @@
             flex: 1;
         }
         
+        .feature-text h4 {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
         .pricing-card {
             border: 1px solid var(--primary-green);
             border-radius: 10px;
@@ -137,7 +142,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="assets/sk-logo100.png" alt="SonicHealer Logo" width="30" height="30" class="d-inline-block align-top">
-                SonicHealer
+                聲脈通
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -304,18 +309,32 @@
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item bg-transparent">下載並安裝「聲脈舒緩」應用程式。</li>
+                    <ol class="list-group list-group-numbered list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent"><a href="#start" class="text-success text-decoration-none">下載並安裝「聲脈通 」應用程式。</a></li>
                         <li class="list-group-item bg-transparent">註冊您的電子郵件，即可享有100分鐘的免費試用。</li>
                         <li class="list-group-item bg-transparent">選擇您喜歡的音樂，搭配我們的聲音能量功能。</li>
                         <li class="list-group-item bg-transparent">享受聲音能量帶來的身心舒緩體驗。</li>
-                    </ul>
+                    </ol>
                     
-                    <h5 class="mt-4">想達到良好效果：</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent">可以帶上耳塞聆聽能量音樂。</li>
-                        <li class="list-group-item bg-transparent">或者把手機喇叭位置對著患處，使聲波能量直接射向患處。</li>
-                    </ul>
+                    <h5 class="mt-4 text-center text-success fw-bold">想達到良好效果：</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="assets/sh-wear-headset.png" class="card-img-top" alt="戴上耳機" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <p class="card-text">可以帶上耳機聆聽能量音樂。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="assets/sh-knee-wave.jpeg" class="card-img-top" alt="聲波治療" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <p class="card-text">或者把手機喇叭位置對著患處，使聲波能量直接射向患處。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -378,7 +397,7 @@
             
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead mb-4">立即下載「聲脈舒緩」，開啟您的身心靈療癒之旅！</p>
+                    <p class="lead mb-4">立即下載「聲脈通 」，開啟您的身心靈療癒之旅！</p>
                     <button class="btn btn-primary btn-lg">下載應用程式</button>
                     
                     <div class="mt-5">
