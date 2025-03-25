@@ -47,7 +47,8 @@ COPY default.conf /etc/nginx/http.d
 RUN apk add --no-cache \
         nodejs \
         npm \
-    && npm install -g pm2@latest
+    && npm install -g pm2@latest \
+    && npm install bootstrap
 
 
 # Set the working directory inside the container
@@ -56,6 +57,7 @@ WORKDIR /app
 # Copy your application files into the container
 COPY . /app
 COPY syslog-ng.conf /etc/syslog-ng
+COPY node_modules/bootstrap/dist/css/bootstrap.min.css /app/html/css/
 
 # Install application dependencies
 RUN npm install

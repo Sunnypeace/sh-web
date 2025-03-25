@@ -1,54 +1,42 @@
-// Add this to your existing script.js
-// document.querySelectorAll('.faq-question').forEach(question => {
-//     question.addEventListener('click', () => {
-//         const item = question.parentElement;
-//         item.classList.toggle('active');
-//         question.querySelector('.toggle').textContent = 
-//             item.classList.contains('active') ? '-' : '+';
-//     });
-// });
-
 // Load FAQ data
-async function loadFAQ() {
-    try {
-        // const response = await fetch('faq.json');
-        const response = await fetch('./data/faq.json');
-
-        // Check if the response is successful
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
+fetch('data/faq.json')
+    .then(response => response.json())
+    .then(data => {
         const faqContainer = document.getElementById('faqContainer');
-        
         data.faqs.forEach(faq => {
             const faqItem = document.createElement('div');
-            faqItem.className = 'faq-item';
+            faqItem.className = 'col-md-8 faq-item';
             faqItem.innerHTML = `
-                <div class="faq-question">
-                    ${faq.question}
-                    <span class="toggle">+</span>
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <h4>${faq.question}</h4>
                 </div>
                 <div class="faq-answer">
-                    ${faq.answer}
+                    <p>${faq.answer}</p>
                 </div>
             `;
             faqContainer.appendChild(faqItem);
         });
+    });
 
-         document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-                question.querySelector('.toggle').textContent = 
-                    item.classList.contains('active') ? '-' : '+';
-            });
-        });
-    } catch (error) {
-        console.error('Error loading FAQ:', error);
-    }
+// Toggle FAQ answers
+function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    const isVisible = answer.style.display === 'block';
+    answer.style.display = isVisible ? 'none' : 'block';
 }
 
-// Call loadFAQ when the document is loaded
-document.addEventListener('DOMContentLoaded', loadFAQ);
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const navHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
