@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SonicHealer - 聲脈通</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+         <!-- Add this line after other CSS links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
             --primary-green: #28a745;
@@ -165,10 +167,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#introduction">介紹</a>
+                        <a class="nav-link" href="#introduction" data-i18n="nav.intro">介紹</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">功能</a>
+                        <a class="nav-link" href="#features" data-i18n="nav.features">功能</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#unique">獨特之處</a>
@@ -195,6 +197,19 @@
                         <a class="nav-link" href="#login">登录</a>
                     </li>
                 </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-globe"></i> 語言
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-lang="hk">繁體中文</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="cn">简体中文</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            </ul>
+                        </li>
+                        <!-- existing nav items... -->
             </div>
         </div>
     </nav>
@@ -606,9 +621,61 @@
         </div>
     </footer>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
     <script>
+          let currentLang = localStorage.getItem('preferred-language') || 'hk';
+    let translations = {};
+
+    async function loadTranslations(lang) {
+        try {
+            const response = await fetch(`lang/${lang}.json`);
+            translations[lang] = await response.json();
+            return translations[lang];
+        } catch (error) {
+            console.error('Error loading translations:', error);
+        }
+    }
+
+    function updateContent(lang) {
+        document.documentElement.lang = lang === 'en' ? 'en' : (lang === 'cn' ? 'zh-CN' : 'zh-HK');
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const keys = key.split('.');
+            let translation = translations[lang];
+            for (const k of keys) {
+                translation = translation?.[k];
+            }
+            if (translation) {
+                if (element.tagName === 'INPUT') {
+                    element.placeholder = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+        // Load initial translations
+        await loadTranslations(currentLang);
+        updateContent(currentLang);
+
+        // Add language switcher event listeners
+        document.querySelectorAll('[data-lang]').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                currentLang = lang;
+                localStorage.setItem('preferred-language', lang);
+                if (!translations[lang]) {
+                    await loadTranslations(lang);
+                }
+                updateContent(lang);
+            });
+        });
+    });
         // Load FAQ data from JSON
             async function loadFAQs() {
             try {
@@ -646,6 +713,7 @@
         }
 
         loadFAQs();
+        
     </script>
 </body>
 </html>
