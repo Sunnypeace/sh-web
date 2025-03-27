@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SonicHealer - 聲脈通</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -548,13 +548,11 @@
             <h2 class="section-title text-center">FAQs</h2>
             
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="accordion" id="faq-list">
-                        <!-- FAQ items will be loaded here by JavaScript -->
-                        <div class="text-center" id="faq-loading">
-                            <div class="spinner-border text-success" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
+                <div class="col-lg-8 mx-auto" id="faqContainer">
+                    <!-- FAQ items will be loaded here by JavaScript -->
+                    <div class="text-center">
+                        <div class="spinner-border text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
                 </div>
@@ -606,46 +604,67 @@
         </div>
     </footer>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load FAQ data from JSON
-            async function loadFAQs() {
-            try {
-                const response = await fetch('data/faq.json');
-                const data = await response.json();
-                const faqList = document.getElementById('faq-list');
-                const loadingSpinner = document.getElementById('faq-loading');
-                
-                if (loadingSpinner) {
-                    loadingSpinner.remove();
-                }
-                
-                data.faqs.forEach((faq, index) => {
-                    const accordionItem = document.createElement('div');
-                    accordionItem.className = 'accordion-item';
-                    accordionItem.innerHTML = `
-                        <h2 class="accordion-header">
-                            <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#faq-${index}">
-                                ${faq.question}
-                            </button>
-                        </h2>
-                        <div id="faq-${index}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" data-bs-parent="#faq-list">
-                            <div class="accordion-body">${faq.answer}</div>
-                        </div>
-                    `;
-                    faqList.appendChild(accordionItem);
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would normally be an AJAX call to fetch data/faq.json
+            // For demonstration, we'll use the provided data directly
+            const faqData = {
+                "faqs": [
+                    {
+                        "question": "How does sound healing work?",
+                        "answer": "Sound healing works through specific frequencies that help restore balance to your body's energy systems."
+                    },
+                    {
+                        "question": "How often should I use the app?",
+                        "answer": "We recommend daily sessions of 15-30 minutes for optimal results."
+                    },
+                    {
+                        "question": "Is SonicHealer suitable for everyone?",
+                        "answer": "Yes, SonicHealer is designed to be safe for all users. However, please consult your healthcare provider if you have specific medical conditions."
+                    }
+                ]
+            };
+            
+            const faqContainer = document.getElementById('faqContainer');
+            faqContainer.innerHTML = '';
+            
+            faqData.faqs.forEach(faq => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.innerHTML = `
+                    <div class="faq-question mb-2">${faq.question}</div>
+                    <div class="faq-answer">${faq.answer}</div>
+                `;
+                faqContainer.appendChild(faqItem);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bsCollapse.hide();
+                        }
+                    }
                 });
-            } catch (error) {
-                console.error('Error loading FAQs:', error);
-                const faqList = document.getElementById('faq-list');
-                if (faqList) {
-                    faqList.innerHTML = '<p class="text-danger">Failed to load FAQs. Please try again later.</p>';
-                }
-            }
-        }
-
-        loadFAQs();
+            });
+        });
     </script>
 </body>
 </html>
