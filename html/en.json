@@ -11,10 +11,7 @@
       "about": "About",
       "faq": "FAQ",
       "login": "Login",
-      "language": "Language", 
-      "language_hk": "Traditional Chinese",
-      "language_cn": "Simplified Chinese",
-      "language_en": "English"
+      "language": "Language"
     },
     "intro": {
       "title": "SonicHealer Introduction",

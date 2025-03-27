@@ -172,43 +172,41 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#features" data-i18n="nav.features">功能</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#unique">獨特之處</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#usage" data-i18n="nav.usage">使用方法</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing" data-i18n="nav.pricing">定价</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#referral" data-i18n="nav.referral">共同發展方案</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#start" data-i18n="nav.start">立即开始</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" data-i18n="nav.about">關於</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#login" data-i18n="nav.login">登录</a>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span data-i18n="nav.language">語言</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-lang="hk" data-i18n="nav.language_hk">繁體中文</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="cn" data-i18n="nav.language_cn">简体中文</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="en" data-i18n="nav.language_en">English</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#usage">使用方法</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">定价</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#referral">共同發展方案</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#start">立即开始</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">關於</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#login">登录</a>
-                    </li>
-                </ul>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-globe"></i> 語言
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-lang="hk">繁體中文</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="cn">简体中文</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            </ul>
-                        </li>
                         <!-- existing nav items... -->
             </div>
         </div>
@@ -623,59 +621,50 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
-    <script>
-          let currentLang = localStorage.getItem('preferred-language') || 'hk';
-    let translations = {};
-
-    async function loadTranslations(lang) {
-        try {
-            const response = await fetch(`lang/${lang}.json`);
-            translations[lang] = await response.json();
-            return translations[lang];
-        } catch (error) {
-            console.error('Error loading translations:', error);
-        }
-    }
-
-    function updateContent(lang) {
-        document.documentElement.lang = lang === 'en' ? 'en' : (lang === 'cn' ? 'zh-CN' : 'zh-HK');
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const keys = key.split('.');
-            let translation = translations[lang];
-            for (const k of keys) {
-                translation = translation?.[k];
-            }
-            if (translation) {
-                if (element.tagName === 'INPUT') {
-                    element.placeholder = translation;
-                } else {
-                    element.textContent = translation;
-                }
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', async function() {
-        // Load initial translations
-        await loadTranslations(currentLang);
-        updateContent(currentLang);
-
-        // Add language switcher event listeners
-        document.querySelectorAll('[data-lang]').forEach(button => {
-            button.addEventListener('click', async (e) => {
+         <!-- Add i18n script -->
+         <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+         <script src="assets/js/i18n.js"></script>
+         <script>
+             // Load translation files
+             async function loadTranslations() {
+                 const [en, zhCN, zhHK] = await Promise.all([
+                     fetch('lang/en.json').then(res => res.json()),
+                     fetch('lang/zh-cn.json').then(res => res.json()),
+                     fetch('lang/zh-hk.json').then(res => res.json())
+                 ]);
+     
+                 // Initialize i18n with default language
+                 i18next.init({
+                     lng: 'en',
+                     fallbackLng: 'en',
+                     resources: {
+                         en: { translation: en },
+                         'zh-cn': { translation: zhCN },
+                         hk: { translation: zhHK }
+                     }
+                 }).then(function() {
+                     // Update page content
+                     updateContent();
+                 });
+             }
+     
+             function updateContent() {
+                 // Update all elements with data-i18n attributes
+                 document.querySelectorAll('[data-i18n]').forEach(element => {
+                     element.innerHTML = i18next.t(element.getAttribute('data-i18n'));
+                 });
+             }
+             document.querySelectorAll('[data-lang]').forEach(element => {
+            element.addEventListener('click', function(e) {
                 e.preventDefault();
-                const lang = e.target.getAttribute('data-lang');
-                currentLang = lang;
-                localStorage.setItem('preferred-language', lang);
-                if (!translations[lang]) {
-                    await loadTranslations(lang);
-                }
-                updateContent(lang);
+                const lang = this.getAttribute('data-lang');
+                i18next.changeLanguage(lang).then(() => {
+                    updateContent();
+                });
             });
         });
-    });
+             // Start loading translations
+             loadTranslations();
         // Load FAQ data from JSON
             async function loadFAQs() {
             try {

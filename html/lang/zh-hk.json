@@ -11,7 +11,10 @@
       "about": "關於",
       "faq": "常見問題",
       "login": "登录",
-      "language": "語言"
+      "language": "語言",
+      "language_hk": "繁體中文",
+      "language_cn": "簡體中文",
+      "language_en": "英文"
     },
     "intro": {
       "title": "聲脈通 介紹",
