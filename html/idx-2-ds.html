@@ -8,6 +8,8 @@
     <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
          <!-- Add this line after other CSS links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary-green: #28a745;
@@ -16,12 +18,14 @@
         }
         
         body {
-            font-family: 'Noto Sans TC', sans-serif;
+            /* Update font stack to support both Traditional and Simplified Chinese */
+            font-family: 'Noto Sans TC', 'Noto Sans SC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
             padding-top: 56px;
+            line-height: 1.2;
         }
         
         .navbar {
-            background-color: white;
+            background-color: var(--light-green);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
@@ -41,12 +45,15 @@
         
         .section {
             padding: 80px 0;
+            text-align: left;
         }
         
         .section-title {
             color: var(--primary-green);
             margin-bottom: 40px;
             font-weight: 700;
+            text-align: center;
+            font-size: 2.25rem;
         }
         
         .feature-img {
@@ -150,6 +157,39 @@
                 border-radius: 10px;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             }
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .list-group-item {
+            font-size: 1.1rem;
+            line-height: 1.0;
+            padding: 1rem 1.25rem;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .text-center {
+            text-align: center !important;
         }
     </style>
 </head>
