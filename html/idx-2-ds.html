@@ -199,12 +199,12 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-globe"></i> 語言
+                                <i class="fas fa-globe"></i> <span data-i18n="nav.language">語言</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-lang="hk">繁體中文</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="cn">简体中文</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="hk" data-i18n="nav.language_hk">繁體中文</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="cn" data-i18n="nav.language_cn">简体中文</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="en" data-i18n="nav.language_en">English</a></li>                                
                             </ul>
                         </li>
                         <!-- existing nav items... -->
@@ -221,8 +221,8 @@
                     <img src="assets/sh-intro.png" alt="SonicHealer Introduction" class="img-fluid rounded">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="section-title text-center">聲脈通 介紹</h2>
-                    <p class="lead md-1">聲脈通 是一個以聲音能量直接啟動人體內經脈運行，疏通經脈和消除經脈內的負能量，從而達到舒緩或消除身體毛病的效果。</p>
+                    <h2 class="section-title text-center" data-i18n="intro.title">聲脈通 介紹</h2>
+                    <p class="lead md-1" data-i18n="intro.description">聲脈通 是一個以聲音能量直接啟動人體內經脈運行，疏通經脈和消除經脈內的負能量，從而達到舒緩或消除身體毛病的效果。</p>
                 </div>
             </div>
         </div>
@@ -231,60 +231,58 @@
     <!-- Features Section -->
     <section id="features" class="section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">功能包括</h2>
+            <h2 class="section-title text-center" data-i18n="features.title">功能包括</h2>
             
             <div class="row mb-5">
                 <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
                     <img src="assets/sh-emotion-section.png" alt="心智/情緒" class="img-fluid feature-img">
                 </div>
                 <div class="col-md-6 order-md-2">
-                    <h3 class="text-success">心智/情緒:</h3>
+                    <h3 class="text-success" data-i18n="features.emotion.title">心智/情緒:</h3>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent">抑鬱症</li>
-                        <li class="list-group-item bg-transparent">恐懼症</li>
-                        <li class="list-group-item bg-transparent">焦慮症</li>
-                        <li class="list-group-item bg-transparent">失眠</li>
-                        <li class="list-group-item bg-transparent">精神不能集中</li>
-                        <li class="list-group-item bg-transparent">過度活躍</li>
-                        <li class="list-group-item bg-transparent">沒有自信</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.depression">抑鬱症</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.phobia">恐懼症</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.anxiety">焦慮症</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.insomnia">失眠</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.concentration">精神不能集中</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.hyperactivity">過度活躍</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.emotion.confidence">沒有自信</li>
                     </ul>
                 </div>
             </div>
 
-            
             <div class="row mb-5">
                 <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
                     <img src="assets/sh-pain-section.png" alt="痛楚" class="img-fluid feature-img">
                 </div>
                 <div class="col-md-6 order-md-2">
-                    <h3 class="text-success">痛楚:</h3>
+                    <h3 class="text-success" data-i18n="features.pain.title">痛楚:</h3>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent">頭痛</li>
-                        <li class="list-group-item bg-transparent">頸痛</li>
-                        <li class="list-group-item bg-transparent">背痛</li>
-                        <li class="list-group-item bg-transparent">腰痛</li>
-                        <li class="list-group-item bg-transparent">膝頭痛</li>
-                        <li class="list-group-item bg-transparent">腳板痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.headache">頭痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.neck">頸痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.back">背痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.waist">腰痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.knee">膝頭痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.pain.foot">腳板痛</li>
                     </ul>
                 </div>
             </div>
 
-            
             <div class="row">
                 <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
                     <img src="assets/sh-sick-section.png" alt="疾病" class="img-fluid feature-img">
                 </div>
                 <div class="col-md-6 order-md-2">
-                    <h3 class="text-success">疾病:</h3>
+                    <h3 class="text-success" data-i18n="features.illness.title">疾病:</h3>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent">感冒 病毒</li>
-                        <li class="list-group-item bg-transparent">中氣不足</li>
-                        <li class="list-group-item bg-transparent">食滯</li>
-                        <li class="list-group-item bg-transparent">便秘</li>
-                        <li class="list-group-item bg-transparent">胃痛</li>
-                        <li class="list-group-item bg-transparent">腸臟虛弱</li>
-                        <li class="list-group-item bg-transparent">腎虛</li>
-                        <li class="list-group-item bg-transparent">肝熱</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.cold">感冒 病毒</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.qi">中氣不足</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.indigestion">食滯</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.constipation">便秘</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.stomach">胃痛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.intestine">腸臟虛弱</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.kidney">腎虛</li>
+                        <li class="list-group-item bg-transparent" data-i18n="features.illness.liver">肝熱</li>
                     </ul>
                 </div>
             </div>
@@ -294,35 +292,35 @@
     <!-- Unique Features Section -->
     <section id="unique" class="section">
         <div class="container">
-            <h2 class="section-title text-center">我們獨特之處</h2>
+            <h2 class="section-title text-center" data-i18n="unique.title">我們獨特之處</h2>
             
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="feature-item">
                         <div class="feature-text">
-                            <h4>聲音能量療法</h4>
-                            <p>我們並非以傳統的音樂節奏或特定頻率刺激神經，而是運用獨特的聲音能量，直接作用於您的經脈，疏通氣血，達到身心平衡。</p>
+                            <h4 data-i18n="unique.features.sound_therapy.title">聲音能量療法</h4>
+                            <p data-i18n="unique.features.sound_therapy.description">我們並非以傳統的音樂節奏或特定頻率刺激神經，而是運用獨特的聲音能量，直接作用於您的經脈，疏通氣血，達到身心平衡。</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-text">
-                            <h4>多樣化的音樂選擇</h4>
-                            <p>您可以自由選擇喜愛的音樂風格，搭配我們的聲音能量功能，無論您來自哪個國家、喜好如何，都能找到最適合您的療癒方式。</p>
+                            <h4 data-i18n="unique.features.music_selection.title">多樣化的音樂選擇</h4>
+                            <p data-i18n="unique.features.music_selection.description">您可以自由選擇喜愛的音樂風格，搭配我們的聲音能量功能，無論您來自哪個國家、喜好如何，都能找到最適合您的療癒方式。</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-text">
-                            <h4>次聲頻選擇</h4>
-                            <p>這是人類聽覺以外的聲頻，在我們程式發放治療能量時不會騷擾在場人士，也適合夜間幫助失眠情況。</p>
+                            <h4 data-i18n="unique.features.infrasound.title">次聲頻選擇</h4>
+                            <p data-i18n="unique.features.infrasound.description">這是人類聽覺以外的聲頻，在我們程式發放治療能量時不會騷擾在場人士，也適合夜間幫助失眠情況。</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-text">
-                            <h4>聽覺有問題人士也可以使用</h4>
-                            <p>因為我們程式發放的能量是直接刺激人體經脈，不需要經過耳朵大腦感受旋律。</p>
+                            <h4 data-i18n="unique.features.hearing_impaired.title">聽覺有問題人士也可以使用</h4>
+                            <p data-i18n="unique.features.hearing_impaired.description">因為我們程式發放的能量是直接刺激人體經脈，不需要經過耳朵大腦感受旋律。</p>
                         </div>
                     </div>
                 </div>
@@ -333,24 +331,24 @@
     <!-- Usage Section -->
     <section id="usage" class="section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">使用方法</h2>
+            <h2 class="section-title text-center" data-i18n="usage.title">使用方法</h2>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <ol class="list-group list-group-numbered list-group-flush mb-4">
-                        <li class="list-group-item bg-transparent"><a href="#start" class="text-success text-decoration-none">下載並安裝「聲脈通 」應用程式。</a></li>
-                        <li class="list-group-item bg-transparent">註冊您的電子郵件，即可享有100分鐘的免費試用。</li>
-                        <li class="list-group-item bg-transparent">選擇您喜歡的音樂，搭配我們的聲音能量功能。</li>
-                        <li class="list-group-item bg-transparent">享受聲音能量帶來的身心舒緩體驗。</li>
+                        <li class="list-group-item bg-transparent" data-i18n="usage.steps.download">下載並安裝「聲脈通 」應用程式。</li>
+                        <li class="list-group-item bg-transparent" data-i18n="usage.steps.register">註冊您的電子郵件，即可享有100分鐘的免費試用。</li>
+                        <li class="list-group-item bg-transparent" data-i18n="usage.steps.select_music">選擇您喜歡的音樂，搭配我們的聲音能量功能。</li>
+                        <li class="list-group-item bg-transparent" data-i18n="usage.steps.enjoy">享受聲音能量帶來的身心舒緩體驗。</li>
                     </ol>
                     
-                    <h5 class="mt-4 text-center text-success fw-bold">想達到良好效果：</h5>
+                    <h5 class="mt-4 text-center text-success fw-bold" data-i18n="usage.best_practices.title">想達到良好效果：</h5>
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <img src="assets/sh-wear-headset.png" class="card-img-top" alt="戴上耳機" style="height: 300px; object-fit: cover;">
                                 <div class="card-body">
-                                    <p class="card-text">可以帶上耳機聆聽能量音樂。</p>
+                                    <p class="card-text" data-i18n="usage.best_practices.headphones">可以帶上耳機聆聽能量音樂。</p>
                                 </div>
                             </div>
                         </div>
@@ -358,7 +356,7 @@
                             <div class="card h-100">
                                 <img src="assets/sh-knee-wave.jpeg" class="card-img-top" alt="聲波治療" style="height: 300px; object-fit: cover;">
                                 <div class="card-body">
-                                    <p class="card-text">或者把手機喇叭位置對著患處，使聲波能量直接射向患處。</p>
+                                    <p class="card-text" data-i18n="usage.best_practices.speaker">或者把手機喇叭位置對著患處，使聲波能量直接射向患處。</p>
                                 </div>
                             </div>
                         </div>
@@ -369,17 +367,18 @@
     </section>
 
     <!-- Pricing Section -->
+    <!-- Pricing Section -->
     <section id="pricing" class="section">
         <div class="container">
-            <h2 class="section-title text-center">付費方案</h2>
+            <h2 class="section-title text-center" data-i18n="pricing.title">付費方案</h2>
             
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="pricing-card h-100">
-                        <h4>基本方案</h4>
-                        <div>50港幣</div>
-                        <p>可購買100分鐘的播放時間<br>有效期三年</p>               
-                        <button class="btn btn-primary mt-3">立即購買</button>
+                        <h4 data-i18n="pricing.basic.title">基本方案</h4>
+                        <div data-i18n="pricing.basic.price">50港幣</div>
+                        <p data-i18n="pricing.basic.description">可購買100分鐘的播放時間 (有效期三年)</p>               
+                        <button class="btn btn-primary mt-3" data-i18n="pricing.basic.button">立即購買</button>
                     </div>
                 </div>
             </div>
@@ -387,105 +386,106 @@
     </section>
 
     <!-- Referral Program Section -->
+    <!-- Referral Program Section -->
     <section id="referral" class="section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">用戶共同發展方案</h2>
+            <h2 class="section-title text-center" data-i18n="referral.title">用戶共同發展方案</h2>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <p class="lead text-center text-center mb-5">聲脈通誠邀所有用戶參與共同發展計劃，透過推薦機制創造可持續的被動收入，實現長遠的財富增長。</p>
+                    <p class="lead text-center text-center mb-5" data-i18n="referral.intro">聲脈通誠邀所有用戶參與共同發展計劃，透過推薦機制創造可持續的被動收入，實現長遠的財富增長。</p>
                     
-                    <h4 class="text-success text-center mb-4">回饋機制</h4>
+                    <h4 class="text-success text-center mb-4" data-i18n="referral.mechanism.title">回饋機制</h4>
                     <div class="row mt-4">
                         <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <h3 class="text-success">第一層</h3>
-                                    <p>成功推薦新用戶後，可獲得該用戶消費金額的20%作為回饋。</p>
+                                    <h3 class="text-success" data-i18n="referral.mechanism.first_level.title">第一層</h3>
+                                    <p data-i18n="referral.mechanism.first_level.description">成功推薦新用戶後，可獲得該用戶消費金額的20%作為回饋。</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <h3 class="text-success">第二層</h3>
-                                    <p>第一層推薦的用戶再次推薦新成員，您可獲得其消費金額的10%回饋。</p>
+                                    <h3 class="text-success" data-i18n="referral.mechanism.second_level.title">第二層</h3>
+                                    <p data-i18n="referral.mechanism.second_level.description">第一層推薦的用戶再次推薦新成員，您可獲得其消費金額的10%回饋。</p>
                                 </div>
                             </div>
                         </div>
                     </div>     
                     <div class="mt-5">
-                        <h4 class="text-success text-center mb-4">共贏模式</h4>
+                        <h4 class="text-success text-center mb-4" data-i18n="referral.win_win.title">共贏模式</h4>
                         <div class="card">
                             <div class="card-body">
-                                <p>此計劃讓每位參與者透過拓展人脈，不斷積累財富。隨著推薦網絡的擴展，您的收益將逐步增長。若您的推薦對象積極參與並發展推薦機制，您的收入將更加可觀。</p>
-                                <p class="mb-0">聲脈通致力於打造可持續、穩健成長的合作機制，讓每一位參與者在共享成果的同時，實現個人財富的長期累積。</p>
+                                <p data-i18n="referral.win_win.description">此計劃讓每位參與者透過拓展人脈，不斷積累財富。隨著推薦網絡的擴展，您的收益將逐步增長。若您的推薦對象積極參與並發展推薦機制，您的收入將更加可觀。</p>
+                                <p class="mb-0" data-i18n="referral.win_win.commitment">聲脈通致力於打造可持續、穩健成長的合作機制，讓每一位參與者在共享成果的同時，實現個人財富的長期累積。</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 收益模擬部分 -->
                     <div class="mt-5">
-                        <h4 class="text-success text-center mb-4">收益模擬案例</h4>
+                        <h4 class="text-success text-center mb-4" data-i18n="referral.simulation.title">收益模擬案例</h4>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="text-center mb-4">A先生每月新增3位推薦的收益預測</h5>
-                                <p class="mb-3">假設條件：</p>
+                                <h5 class="text-center mb-4" data-i18n="referral.simulation.case_title">A先生每月新增3位推薦的收益預測</h5>
+                                <p class="mb-3" data-i18n="referral.simulation.assumptions">假設條件：</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li>• A先生每月推薦 3 位新用戶</li>
-                                    <li>• 每位用戶月消費 $100</li>
-                                    <li>• 每位推薦者也推薦 3 位新成員</li>
+                                    <li data-i18n="referral.simulation.assumption1">• A先生每月推薦 3 位新用戶</li>
+                                    <li data-i18n="referral.simulation.assumption2">• 每位用戶月消費 $100</li>
+                                    <li data-i18n="referral.simulation.assumption3">• 每位推薦者也推薦 3 位新成員</li>
                                 </ul>
 
                                 <div class="table-responsive">
                                     <table class="table table-bordered">
                                         <thead class="table-success">
                                             <tr>
-                                                <th>月份</th>
-                                                <th>第一層收益</th>
-                                                <th>第二層收益</th>
-                                                <th>月度總收益</th>
-                                                <th>累積總收益</th>
+                                                <th data-i18n="referral.simulation.table.month">月份</th>
+                                                <th data-i18n="referral.simulation.table.first_level">第一層收益</th>
+                                                <th data-i18n="referral.simulation.table.second_level">第二層收益</th>
+                                                <th data-i18n="referral.simulation.table.monthly_total">月度總收益</th>
+                                                <th data-i18n="referral.simulation.table.cumulative_total">累積總收益</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>第一個月</td>
+                                                <td data-i18n="referral.simulation.month1">第一個月</td>
                                                 <td>$60</td>
                                                 <td>$90</td>
                                                 <td>$150</td>
                                                 <td>$150</td>
                                             </tr>
                                             <tr>
-                                                <td>第二個月</td>
+                                                <td data-i18n="referral.simulation.month2">第二個月</td>
                                                 <td>$120</td>
                                                 <td>$180</td>
                                                 <td>$300</td>
                                                 <td>$450</td>
                                             </tr>
                                             <tr>
-                                                <td>第三個月</td>
+                                                <td data-i18n="referral.simulation.month3">第三個月</td>
                                                 <td>$180</td>
                                                 <td>$270</td>
                                                 <td>$450</td>
                                                 <td>$900</td>
                                             </tr>
                                             <tr>
-                                                <td>第四個月</td>
+                                                <td data-i18n="referral.simulation.month4">第四個月</td>
                                                 <td>$240</td>
                                                 <td>$810</td>
                                                 <td>$1,050</td>
                                                 <td>$1,950</td>
                                             </tr>
                                             <tr>
-                                                <td>第五個月</td>
+                                                <td data-i18n="referral.simulation.month5">第五個月</td>
                                                 <td>$300</td>
                                                 <td>$2,430</td>
                                                 <td>$2,730</td>
                                                 <td>$4,680</td>
                                             </tr>
                                             <tr>
-                                                <td>第六個月</td>
+                                                <td data-i18n="referral.simulation.month6">第六個月</td>
                                                 <td>$360</td>
                                                 <td>$7,290</td>
                                                 <td>$7,650</td>
@@ -496,8 +496,8 @@
                                 </div>
 
                                 <div class="alert alert-success mt-4">
-                                    <h6 class="mb-3">半年成果預測：</h6>
-                                    <p class="mb-0">持續推薦6個月後，月收入可達 $7,650，累積總收益達到 $12,330。這展示了推薦網絡擴展帶來的收益增長潛力！</p>
+                                    <h6 class="mb-3" data-i18n="referral.simulation.result_title">半年成果預測：</h6>
+                                    <p class="mb-0" data-i18n="referral.simulation.result_description">持續推薦6個月後，月收入可達 $7,650，累積總收益達到 $12,330。這展示了推薦網絡擴展帶來的收益增長潛力！</p>
                                 </div>
                             </div>
                         </div>
@@ -508,57 +508,58 @@
     </section>
 
     <!-- Get Started Section -->
-    <section id="start" class="section">
-        <div class="container">
-            <h2 class="section-title text-center">立即使用</h2>
-            
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                        <p class="lead mb-4">立即下載「聲脈通」，開始您的健康之旅！</p>
-                        <p class="mb-4">選擇您喜歡的平台下載，即可享受100分鐘免費體驗：</p>
+        <!-- Get Started Section -->
+        <section id="start" class="section">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="start.title">立即使用</h2>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="lead mb-4" data-i18n="start.subtitle">立即下載「聲脈通」，開始您的健康之旅！</p>
+                        <p class="mb-4" data-i18n="start.description">選擇您喜歡的平台下載，即可享受100分鐘免費體驗：</p>
                         <div class="mb-4">
                             <div class="mb-3">
-                                <h5 class="text-success">Android 用戶下載</h5>
+                                <h5 class="text-success" data-i18n="start.android_title">Android 用戶下載</h5>
                                 <a href="https://play.google.com/store" class="download-btn">
-                                    <img src="assets/google-play.png" alt="Get it on Google Play" />
+                                    <img src="assets/google-play.png" alt="Get it on Google Play" data-i18n="[alt]start.google_play_alt"/>
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <h5 class="text-success">iOS 用戶下載</h5>
+                                <h5 class="text-success" data-i18n="start.ios_title">iOS 用戶下載</h5>
                                 <a href="https://apps.apple.com" class="download-btn">
-                                    <img src="assets/app-store.png" alt="Download on App Store"/>
+                                    <img src="assets/app-store.png" alt="Download on App Store" data-i18n="[alt]start.app_store_alt"/>
                                 </a>
                             </div>
                         </div>
-    
-                    
-                    <div class="mt-5">
-                        <h5 class="text-success">注意事項</h5>
-                        <p>本應用程式僅供舒緩身心之用，如有嚴重身心疾病，請尋求專業醫療協助。</p>
-                        <p>本應用程式的原理為聲音能量調節經脈，惟此為中醫理論，西醫未必認同，請用戶自行判斷。</p>
+                        
+                        <div class="mt-5">
+                            <h5 class="text-success" data-i18n="start.notice_title">注意事項</h5>
+                            <p data-i18n="start.notice1">本應用程式僅供舒緩身心之用，如有嚴重身心疾病，請尋求專業醫療協助。</p>
+                            <p data-i18n="start.notice2">本應用程式的原理為聲音能量調節經脈，惟此為中醫理論，西醫未必認同，請用戶自行判斷。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- About Section -->
     <section id="about" class="section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">關於</h2>
+            <h2 class="section-title text-center" data-i18n="about.title">關於</h2>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead mb-4">聲脈通 是由香港真健康公司 創造,希望以最簡單快速的能量音頻傳輸來舒緩有需要人士的病苦.</p>
+                    <p class="lead mb-4" data-i18n="about.description">聲脈通 是由香港真健康公司 創造,希望以最簡單快速的能量音頻傳輸來舒緩有需要人士的病苦.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
+    <!-- FAQ Section -->
     <section id="faq" class="section">
         <div class="container">
-            <h2 class="section-title text-center">FAQs</h2>
+            <h2 class="section-title text-center" data-i18n="faq.title">FAQs</h2>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
@@ -566,7 +567,7 @@
                         <!-- FAQ items will be loaded here by JavaScript -->
                         <div class="text-center" id="faq-loading">
                             <div class="spinner-border text-success" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                                <span class="visually-hidden" data-i18n="faq.loading">Loading...</span>
                             </div>
                         </div>
                     </div>
@@ -576,9 +577,10 @@
     </section>
 
     <!-- Login Section -->
+    <!-- Login Section -->
     <section id="login" class="section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">登录</h2>
+            <h2 class="section-title text-center" data-i18n="login.title">登录</h2>
             
             <div class="row">
                 <div class="col-md-6 mx-auto">
@@ -586,14 +588,14 @@
                         <div class="card-body">
                             <form>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">電子郵件</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <label for="email" class="form-label" data-i18n="login.email_label">電子郵件</label>
+                                    <input type="email" class="form-control" id="email" required data-i18n="[placeholder]login.email_placeholder">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">密碼</label>
-                                    <input type="password" class="form-control" id="password" required>
+                                    <label for="password" class="form-label" data-i18n="login.password_label">密碼</label>
+                                    <input type="password" class="form-control" id="password" required data-i18n="[placeholder]login.password_placeholder">
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">登录</button>
+                                <button type="submit" class="btn btn-primary w-100" data-i18n="login.submit_button">登录</button>
                             </form>
                         </div>
                     </div>
@@ -603,17 +605,18 @@
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>SonicHealer - 聲脈通</h5>
-                    <p>香港真健康公司 © 2023</p>
+                    <h5 data-i18n="footer.title">SonicHealer - 聲脈通</h5>
+                    <p data-i18n="footer.copyright">香港真健康公司 © 2023</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-white me-3">隱私政策</a>
-                    <a href="#" class="text-white me-3">服務條款</a>
-                    <a href="#" class="text-white">聯繫我們</a>
+                    <a href="#" class="text-white me-3" data-i18n="footer.privacy_policy">隱私政策</a>
+                    <a href="#" class="text-white me-3" data-i18n="footer.terms_of_service">服務條款</a>
+                    <a href="#" class="text-white" data-i18n="footer.contact_us">聯繫我們</a>
                 </div>
             </div>
         </div>
