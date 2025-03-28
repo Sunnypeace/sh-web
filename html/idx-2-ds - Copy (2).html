@@ -625,7 +625,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
     <script>
-    let currentLang = localStorage.getItem('preferred-language') || 'hk';
+          let currentLang = localStorage.getItem('preferred-language') || 'hk';
     let translations = {};
 
     async function loadTranslations(lang) {
@@ -658,27 +658,29 @@
         });
     }
 
+    document.addEventListener('DOMContentLoaded', async function() {
+        // Load initial translations
+        await loadTranslations(currentLang);
+        updateContent(currentLang);
 
-
-        // Update FAQ content when language changes
-        document.addEventListener('languageChanged', () => {
-            const faqList = document.getElementById('faq-list');
-            if (faqList) {
-                faqList.innerHTML = `
-                    <div class="text-center" id="faq-loading">
-                        <div class="spinner-border text-success" role="status">
-                            <span class="visually-hidden" data-i18n="faq.loading">Loading...</span>
-                        </div>
-                    </div>
-                `;
-                loadFAQs();
-            }
+        // Add language switcher event listeners
+        document.querySelectorAll('[data-lang]').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                currentLang = lang;
+                localStorage.setItem('preferred-language', lang);
+                if (!translations[lang]) {
+                    await loadTranslations(lang);
+                }
+                updateContent(lang);
+            });
         });
-
+    });
         // Load FAQ data from JSON
-        async function loadFAQs() {
+            async function loadFAQs() {
             try {
-                const response = await fetch(`data/faq-${currentLang}.json`);
+                const response = await fetch('data/faq.json');
                 const data = await response.json();
                 const faqList = document.getElementById('faq-list');
                 const loadingSpinner = document.getElementById('faq-loading');
@@ -687,7 +689,6 @@
                     loadingSpinner.remove();
                 }
                 
-                faqList.innerHTML = ''; // Clear existing FAQs
                 data.faqs.forEach((faq, index) => {
                     const accordionItem = document.createElement('div');
                     accordionItem.className = 'accordion-item';
@@ -712,50 +713,8 @@
             }
         }
 
-        // Update FAQ content when language changes
-        function triggerLanguageChange() {
-            const event = new Event('languageChanged');
-            document.dispatchEvent(event);
-        }
-
-        document.addEventListener('DOMContentLoaded', async function() {
-            // Load initial translations
-            try {
-                await loadTranslations(currentLang);
-                updateContent(currentLang);
-            } catch (error) {
-                console.error('Failed to load initial translations:', error);
-            }
-
-            // Add language switcher event listeners
-            document.querySelectorAll('[data-lang]').forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    const lang = e.target.getAttribute('data-lang');
-                    if (lang === currentLang) return;
-                    
-                    currentLang = lang;
-                    localStorage.setItem('preferred-language', lang);
-                    
-                    try {
-                        if (!translations[lang]) {
-                            await loadTranslations(lang);
-                        }
-                        updateContent(lang);
-                        triggerLanguageChange();
-                    } catch (error) {
-                        console.error('Failed to change language:', error);
-                    }
-                });
-            });
-
-            // Load FAQs after initial translations
-            try {
-                await loadFAQs();
-            } catch (error) {
-                console.error('Failed to load FAQs:', error);
-            }
-        });
+        loadFAQs();
+        
     </script>
 </body>
 </html>
