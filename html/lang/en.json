@@ -11,11 +11,7 @@
       "about": "About",
       "faq": "FAQ",
       "login": "Login",
-<<<<<<< HEAD
-      "language": "Language", 
-=======
       "language": "Language",
->>>>>>> saved-commits
       "language_hk": "Traditional Chinese",
       "language_cn": "Simplified Chinese",
       "language_en": "English"
@@ -24,23 +20,6 @@
       "title": "SonicHealer Introduction",
       "description": "SonicHealer uses sound energy to activate meridian flow in your body, clear blockages, and eliminate negative energy, helping to relieve or eliminate physical ailments."
     },
-<<<<<<< HEAD
-    "features": {
-      "title": "Features Include",
-      "mental": {
-        "title": "Mental/Emotional:",
-        "items": [
-          "Depression",
-          "Phobia",
-          "Anxiety",
-          "Insomnia",
-          "Lack of Focus",
-          "Hyperactivity",
-          "Low Self-confidence"
-        ]
-      }
-    }
-=======
     
     "features": {
         "title": "Features",
@@ -207,6 +186,5 @@
   "contact_us": "Contact Us"
 }
 
->>>>>>> saved-commits
 
   }
