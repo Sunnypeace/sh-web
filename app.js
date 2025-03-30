@@ -261,7 +261,8 @@ function runC8(argsArray) {
 // const PORT = 3000;
 // app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
 
+// this is to add render.com port
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+app.listen(port, ()  => {
     console.log(`Example app listening on port ${port}`)
   })
