@@ -8,8 +8,6 @@
     <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
          <!-- Add this line after other CSS links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --primary-green: #28a745;
@@ -18,14 +16,12 @@
         }
         
         body {
-            /* Update font stack to support both Traditional and Simplified Chinese */
-            font-family: 'Noto Sans TC', 'Noto Sans SC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
             padding-top: 56px;
-            line-height: 1.2;
         }
         
         .navbar {
-            background-color: var(--light-green);
+            background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
@@ -45,15 +41,12 @@
         
         .section {
             padding: 80px 0;
-            text-align: left;
         }
         
         .section-title {
             color: var(--primary-green);
             margin-bottom: 40px;
             font-weight: 700;
-            text-align: center;
-            font-size: 2.25rem;
         }
         
         .feature-img {
@@ -157,39 +150,6 @@
                 border-radius: 10px;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             }
-        }
-
-        h3 {
-            font-weight: 600;
-            font-size: 1.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        h4 {
-            font-weight: 600;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .lead {
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.8;
-        }
-
-        .list-group-item {
-            font-size: 1.1rem;
-            line-height: 1.0;
-            padding: 1rem 1.25rem;
-        }
-
-        .card-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .text-center {
-            text-align: center !important;
         }
     </style>
 </head>
@@ -665,7 +625,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
     <script>
-    let currentLang = localStorage.getItem('preferred-language') || 'hk';
+          let currentLang = localStorage.getItem('preferred-language') || 'hk';
     let translations = {};
 
     async function loadTranslations(lang) {
@@ -698,27 +658,29 @@
         });
     }
 
+    document.addEventListener('DOMContentLoaded', async function() {
+        // Load initial translations
+        await loadTranslations(currentLang);
+        updateContent(currentLang);
 
-
-        // Update FAQ content when language changes
-        document.addEventListener('languageChanged', () => {
-            const faqList = document.getElementById('faq-list');
-            if (faqList) {
-                faqList.innerHTML = `
-                    <div class="text-center" id="faq-loading">
-                        <div class="spinner-border text-success" role="status">
-                            <span class="visually-hidden" data-i18n="faq.loading">Loading...</span>
-                        </div>
-                    </div>
-                `;
-                loadFAQs();
-            }
+        // Add language switcher event listeners
+        document.querySelectorAll('[data-lang]').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                currentLang = lang;
+                localStorage.setItem('preferred-language', lang);
+                if (!translations[lang]) {
+                    await loadTranslations(lang);
+                }
+                updateContent(lang);
+            });
         });
-
+    });
         // Load FAQ data from JSON
-        async function loadFAQs() {
+            async function loadFAQs() {
             try {
-                const response = await fetch(`data/faq-${currentLang}.json`);
+                const response = await fetch('data/faq.json');
                 const data = await response.json();
                 const faqList = document.getElementById('faq-list');
                 const loadingSpinner = document.getElementById('faq-loading');
@@ -727,7 +689,6 @@
                     loadingSpinner.remove();
                 }
                 
-                faqList.innerHTML = ''; // Clear existing FAQs
                 data.faqs.forEach((faq, index) => {
                     const accordionItem = document.createElement('div');
                     accordionItem.className = 'accordion-item';
@@ -752,50 +713,8 @@
             }
         }
 
-        // Update FAQ content when language changes
-        function triggerLanguageChange() {
-            const event = new Event('languageChanged');
-            document.dispatchEvent(event);
-        }
-
-        document.addEventListener('DOMContentLoaded', async function() {
-            // Load initial translations
-            try {
-                await loadTranslations(currentLang);
-                updateContent(currentLang);
-            } catch (error) {
-                console.error('Failed to load initial translations:', error);
-            }
-
-            // Add language switcher event listeners
-            document.querySelectorAll('[data-lang]').forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    const lang = e.target.getAttribute('data-lang');
-                    if (lang === currentLang) return;
-                    
-                    currentLang = lang;
-                    localStorage.setItem('preferred-language', lang);
-                    
-                    try {
-                        if (!translations[lang]) {
-                            await loadTranslations(lang);
-                        }
-                        updateContent(lang);
-                        triggerLanguageChange();
-                    } catch (error) {
-                        console.error('Failed to change language:', error);
-                    }
-                });
-            });
-
-            // Load FAQs after initial translations
-            try {
-                await loadFAQs();
-            } catch (error) {
-                console.error('Failed to load FAQs:', error);
-            }
-        });
+        loadFAQs();
+        
     </script>
 </body>
 </html>

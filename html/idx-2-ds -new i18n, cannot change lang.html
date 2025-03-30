@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicHealer - 聲脈通</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+         <!-- Add this line after other CSS links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --dark-green: #218838;
+            --light-green: #d4edda;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            padding-top: 56px;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-green) !important;
+        }
+        
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        .feature-img {
+            width: 300px;  /* 原来是100px */
+            height: 300px; /* 原来是100px */
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+            /* 添加新的样式用于调整布局 */
+        .feature-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .small-feature-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            border-color: var(--dark-green);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-text h4 {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .pricing-card {
+            border: 1px solid var(--primary-green);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-price {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+        .download-btn {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .download-btn img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn img:hover {
+            transform: scale(1.05);
+        }      
+  
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 0;
+            }
+            
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/sk-logo100.png" alt="SonicHealer Logo" width="30" height="30" class="d-inline-block align-top">
+                聲脈通
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduction" data-i18n="nav.intro">介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features" data-i18n="nav.features">功能</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#usage" data-i18n="nav.usage">使用方法</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing" data-i18n="nav.pricing">定价</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#referral" data-i18n="nav.referral">共同發展方案</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#start" data-i18n="nav.start">立即开始</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" data-i18n="nav.about">關於</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#login" data-i18n="nav.login">登录</a>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span data-i18n="nav.language">語言</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-lang="hk" data-i18n="nav.language_hk">繁體中文</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="cn" data-i18n="nav.language_cn">简体中文</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="en" data-i18n="nav.language_en">English</a></li>
+                        </ul>
+                    </li>
+                        <!-- existing nav items... -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="section">
+        <div class="container">
+          
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="assets/sh-intro.png" alt="SonicHealer Introduction" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title text-center">聲脈通 介紹</h2>
+                    <p class="lead md-1">聲脈通 是一個以聲音能量直接啟動人體內經脈運行，疏通經脈和消除經脈內的負能量，從而達到舒緩或消除身體毛病的效果。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">功能包括</h2>
+            
+            <div class="row mb-5">
+                <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
+                    <img src="assets/sh-emotion-section.png" alt="心智/情緒" class="img-fluid feature-img">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="text-success">心智/情緒:</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">抑鬱症</li>
+                        <li class="list-group-item bg-transparent">恐懼症</li>
+                        <li class="list-group-item bg-transparent">焦慮症</li>
+                        <li class="list-group-item bg-transparent">失眠</li>
+                        <li class="list-group-item bg-transparent">精神不能集中</li>
+                        <li class="list-group-item bg-transparent">過度活躍</li>
+                        <li class="list-group-item bg-transparent">沒有自信</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row mb-5">
+                <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
+                    <img src="assets/sh-pain-section.png" alt="痛楚" class="img-fluid feature-img">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="text-success">痛楚:</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">頭痛</li>
+                        <li class="list-group-item bg-transparent">頸痛</li>
+                        <li class="list-group-item bg-transparent">背痛</li>
+                        <li class="list-group-item bg-transparent">腰痛</li>
+                        <li class="list-group-item bg-transparent">膝頭痛</li>
+                        <li class="list-group-item bg-transparent">腳板痛</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-md-6 order-md-1 mb-4 mb-md-0 text-end">
+                    <img src="assets/sh-sick-section.png" alt="疾病" class="img-fluid feature-img">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="text-success">疾病:</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">感冒 病毒</li>
+                        <li class="list-group-item bg-transparent">中氣不足</li>
+                        <li class="list-group-item bg-transparent">食滯</li>
+                        <li class="list-group-item bg-transparent">便秘</li>
+                        <li class="list-group-item bg-transparent">胃痛</li>
+                        <li class="list-group-item bg-transparent">腸臟虛弱</li>
+                        <li class="list-group-item bg-transparent">腎虛</li>
+                        <li class="list-group-item bg-transparent">肝熱</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Features Section -->
+    <section id="unique" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">我們獨特之處</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="feature-item">
+                        <div class="feature-text">
+                            <h4>聲音能量療法</h4>
+                            <p>我們並非以傳統的音樂節奏或特定頻率刺激神經，而是運用獨特的聲音能量，直接作用於您的經脈，疏通氣血，達到身心平衡。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-text">
+                            <h4>多樣化的音樂選擇</h4>
+                            <p>您可以自由選擇喜愛的音樂風格，搭配我們的聲音能量功能，無論您來自哪個國家、喜好如何，都能找到最適合您的療癒方式。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-text">
+                            <h4>次聲頻選擇</h4>
+                            <p>這是人類聽覺以外的聲頻，在我們程式發放治療能量時不會騷擾在場人士，也適合夜間幫助失眠情況。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-text">
+                            <h4>聽覺有問題人士也可以使用</h4>
+                            <p>因為我們程式發放的能量是直接刺激人體經脈，不需要經過耳朵大腦感受旋律。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">使用方法</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <ol class="list-group list-group-numbered list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent"><a href="#start" class="text-success text-decoration-none">下載並安裝「聲脈通 」應用程式。</a></li>
+                        <li class="list-group-item bg-transparent">註冊您的電子郵件，即可享有100分鐘的免費試用。</li>
+                        <li class="list-group-item bg-transparent">選擇您喜歡的音樂，搭配我們的聲音能量功能。</li>
+                        <li class="list-group-item bg-transparent">享受聲音能量帶來的身心舒緩體驗。</li>
+                    </ol>
+                    
+                    <h5 class="mt-4 text-center text-success fw-bold">想達到良好效果：</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="assets/sh-wear-headset.png" class="card-img-top" alt="戴上耳機" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <p class="card-text">可以帶上耳機聆聽能量音樂。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="assets/sh-knee-wave.jpeg" class="card-img-top" alt="聲波治療" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <p class="card-text">或者把手機喇叭位置對著患處，使聲波能量直接射向患處。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">付費方案</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="pricing-card h-100">
+                        <h4>基本方案</h4>
+                        <div>50港幣</div>
+                        <p>可購買100分鐘的播放時間<br>有效期三年</p>               
+                        <button class="btn btn-primary mt-3">立即購買</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program Section -->
+    <section id="referral" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">用戶共同發展方案</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead text-center text-center mb-5">聲脈通誠邀所有用戶參與共同發展計劃，透過推薦機制創造可持續的被動收入，實現長遠的財富增長。</p>
+                    
+                    <h4 class="text-success text-center mb-4">回饋機制</h4>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <h3 class="text-success">第一層</h3>
+                                    <p>成功推薦新用戶後，可獲得該用戶消費金額的20%作為回饋。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <h3 class="text-success">第二層</h3>
+                                    <p>第一層推薦的用戶再次推薦新成員，您可獲得其消費金額的10%回饋。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="mt-5">
+                        <h4 class="text-success text-center mb-4">共贏模式</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>此計劃讓每位參與者透過拓展人脈，不斷積累財富。隨著推薦網絡的擴展，您的收益將逐步增長。若您的推薦對象積極參與並發展推薦機制，您的收入將更加可觀。</p>
+                                <p class="mb-0">聲脈通致力於打造可持續、穩健成長的合作機制，讓每一位參與者在共享成果的同時，實現個人財富的長期累積。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 收益模擬部分 -->
+                    <div class="mt-5">
+                        <h4 class="text-success text-center mb-4">收益模擬案例</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center mb-4">A先生每月新增3位推薦的收益預測</h5>
+                                <p class="mb-3">假設條件：</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li>• A先生每月推薦 3 位新用戶</li>
+                                    <li>• 每位用戶月消費 $100</li>
+                                    <li>• 每位推薦者也推薦 3 位新成員</li>
+                                </ul>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>月份</th>
+                                                <th>第一層收益</th>
+                                                <th>第二層收益</th>
+                                                <th>月度總收益</th>
+                                                <th>累積總收益</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>第一個月</td>
+                                                <td>$60</td>
+                                                <td>$90</td>
+                                                <td>$150</td>
+                                                <td>$150</td>
+                                            </tr>
+                                            <tr>
+                                                <td>第二個月</td>
+                                                <td>$120</td>
+                                                <td>$180</td>
+                                                <td>$300</td>
+                                                <td>$450</td>
+                                            </tr>
+                                            <tr>
+                                                <td>第三個月</td>
+                                                <td>$180</td>
+                                                <td>$270</td>
+                                                <td>$450</td>
+                                                <td>$900</td>
+                                            </tr>
+                                            <tr>
+                                                <td>第四個月</td>
+                                                <td>$240</td>
+                                                <td>$810</td>
+                                                <td>$1,050</td>
+                                                <td>$1,950</td>
+                                            </tr>
+                                            <tr>
+                                                <td>第五個月</td>
+                                                <td>$300</td>
+                                                <td>$2,430</td>
+                                                <td>$2,730</td>
+                                                <td>$4,680</td>
+                                            </tr>
+                                            <tr>
+                                                <td>第六個月</td>
+                                                <td>$360</td>
+                                                <td>$7,290</td>
+                                                <td>$7,650</td>
+                                                <td>$12,330</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="alert alert-success mt-4">
+                                    <h6 class="mb-3">半年成果預測：</h6>
+                                    <p class="mb-0">持續推薦6個月後，月收入可達 $7,650，累積總收益達到 $12,330。這展示了推薦網絡擴展帶來的收益增長潛力！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="start" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">立即使用</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                        <p class="lead mb-4">立即下載「聲脈通」，開始您的健康之旅！</p>
+                        <p class="mb-4">選擇您喜歡的平台下載，即可享受100分鐘免費體驗：</p>
+                        <div class="mb-4">
+                            <div class="mb-3">
+                                <h5 class="text-success">Android 用戶下載</h5>
+                                <a href="https://play.google.com/store" class="download-btn">
+                                    <img src="assets/google-play.png" alt="Get it on Google Play" />
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <h5 class="text-success">iOS 用戶下載</h5>
+                                <a href="https://apps.apple.com" class="download-btn">
+                                    <img src="assets/app-store.png" alt="Download on App Store"/>
+                                </a>
+                            </div>
+                        </div>
+    
+                    
+                    <div class="mt-5">
+                        <h5 class="text-success">注意事項</h5>
+                        <p>本應用程式僅供舒緩身心之用，如有嚴重身心疾病，請尋求專業醫療協助。</p>
+                        <p>本應用程式的原理為聲音能量調節經脈，惟此為中醫理論，西醫未必認同，請用戶自行判斷。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">關於</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead mb-4">聲脈通 是由香港真健康公司 創造,希望以最簡單快速的能量音頻傳輸來舒緩有需要人士的病苦.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">FAQs</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faq-list">
+                        <!-- FAQ items will be loaded here by JavaScript -->
+                        <div class="text-center" id="faq-loading">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">登录</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">電子郵件</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">密碼</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">登录</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SonicHealer - 聲脈通</h5>
+                    <p>香港真健康公司 © 2023</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">隱私政策</a>
+                    <a href="#" class="text-white me-3">服務條款</a>
+                    <a href="#" class="text-white">聯繫我們</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+         <!-- Add i18n script -->
+         <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+         <script src="assets/js/i18n.js"></script>
+         <script>
+             // Load translation files
+             async function loadTranslations() {
+                 const [en, zhCN, zhHK] = await Promise.all([
+                     fetch('lang/en.json').then(res => res.json()),
+                     fetch('lang/zh-cn.json').then(res => res.json()),
+                     fetch('lang/zh-hk.json').then(res => res.json())
+                 ]);
+     
+                 // Initialize i18n with default language
+                 i18next.init({
+                     lng: 'en',
+                     fallbackLng: 'en',
+                     resources: {
+                         en: { translation: en },
+                         'zh-cn': { translation: zhCN },
+                         hk: { translation: zhHK }
+                     }
+                 }).then(function() {
+                     // Update page content
+                     updateContent();
+                 });
+             }
+     
+             function updateContent() {
+                 // Update all elements with data-i18n attributes
+                 document.querySelectorAll('[data-i18n]').forEach(element => {
+                     element.innerHTML = i18next.t(element.getAttribute('data-i18n'));
+                 });
+             }
+             document.querySelectorAll('[data-lang]').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                i18next.changeLanguage(lang).then(() => {
+                    updateContent();
+                });
+            });
+        });
+             // Start loading translations
+             loadTranslations();
+        // Load FAQ data from JSON
+            async function loadFAQs() {
+            try {
+                const response = await fetch('data/faq.json');
+                const data = await response.json();
+                const faqList = document.getElementById('faq-list');
+                const loadingSpinner = document.getElementById('faq-loading');
+                
+                if (loadingSpinner) {
+                    loadingSpinner.remove();
+                }
+                
+                data.faqs.forEach((faq, index) => {
+                    const accordionItem = document.createElement('div');
+                    accordionItem.className = 'accordion-item';
+                    accordionItem.innerHTML = `
+                        <h2 class="accordion-header">
+                            <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#faq-${index}">
+                                ${faq.question}
+                            </button>
+                        </h2>
+                        <div id="faq-${index}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" data-bs-parent="#faq-list">
+                            <div class="accordion-body">${faq.answer}</div>
+                        </div>
+                    `;
+                    faqList.appendChild(accordionItem);
+                });
+            } catch (error) {
+                console.error('Error loading FAQs:', error);
+                const faqList = document.getElementById('faq-list');
+                if (faqList) {
+                    faqList.innerHTML = '<p class="text-danger">Failed to load FAQs. Please try again later.</p>';
+                }
+            }
+        }
+
+        loadFAQs();
+        
+    </script>
+</body>
+</html>

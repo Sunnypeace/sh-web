@@ -11,7 +11,11 @@
       "about": "About",
       "faq": "FAQ",
       "login": "Login",
+<<<<<<< HEAD
       "language": "Language", 
+=======
+      "language": "Language",
+>>>>>>> saved-commits
       "language_hk": "Traditional Chinese",
       "language_cn": "Simplified Chinese",
       "language_en": "English"
@@ -20,6 +24,7 @@
       "title": "SonicHealer Introduction",
       "description": "SonicHealer uses sound energy to activate meridian flow in your body, clear blockages, and eliminate negative energy, helping to relieve or eliminate physical ailments."
     },
+<<<<<<< HEAD
     "features": {
       "title": "Features Include",
       "mental": {
@@ -35,5 +40,173 @@
         ]
       }
     }
+=======
+    
+    "features": {
+        "title": "Features",
+        "emotion": {
+            "title": "Mental/Emotional:",
+            "depression": "Depression",
+            "phobia": "Phobia",
+            "anxiety": "Anxiety",
+            "insomnia": "Insomnia",
+            "concentration": "Lack of concentration",
+            "hyperactivity": "Hyperactivity",
+            "confidence": "Lack of confidence"
+        },
+        "pain": {
+            "title": "Pain:",
+            "headache": "Headache",
+            "neck": "Neck pain",
+            "back": "Back pain",
+            "waist": "Waist pain",
+            "knee": "Knee pain",
+            "foot": "Foot pain"
+        },
+        "illness": {
+            "title": "Illnesses:",
+            "cold": "Cold & Virus",
+            "qi": "Insufficient Qi",
+            "indigestion": "Indigestion",
+            "constipation": "Constipation",
+            "stomach": "Stomach pain",
+            "intestine": "Weak intestines",
+            "kidney": "Kidney deficiency",
+            "liver": "Liver heat"
+        }
+    },
+
+    "unique": {
+        "title": "Our Unique Features",
+        "features": {
+            "sound_therapy": {
+                "title": "Sound Energy Therapy",
+                "description": "We don't use traditional music rhythms or specific frequencies to stimulate nerves. Instead, we use unique sound energy that directly acts on your meridians, promoting qi and blood circulation to achieve physical and mental balance."
+            },
+            "music_selection": {
+                "title": "Diverse Music Selection",
+                "description": "You can freely choose your favorite music styles combined with our sound energy function. No matter which country you're from or what your preferences are, you'll find the most suitable healing method."
+            },
+            "infrasound": {
+                "title": "Infrasound Option",
+                "description": "This is a frequency beyond human hearing. When our program releases healing energy, it won't disturb people around you and is suitable for helping with insomnia at night."
+            },
+            "hearing_impaired": {
+                "title": "Accessible for Hearing Impaired",
+                "description": "Since the energy released by our program directly stimulates the body's meridians, it doesn't need to be processed through the ears and brain to perceive the melody."
+            }
+        }
+    },
+
+    "usage": {
+        "title": "How to Use",
+        "steps": {
+            "download": "Download and install the 'SonicHealer' app.",
+            "register": "Register your email to get 100 minutes of free trial.",
+            "select_music": "Choose your favorite music with our sound energy function.",
+            "enjoy": "Enjoy the physical and mental relaxation brought by sound energy."
+        },
+        "best_practices": {
+            "title": "For Best Results:",
+            "headphones": "You can listen to energy music with headphones.",
+            "speaker": "Or point your phone's speaker towards the affected area to direct sound wave energy."
+        }
+    },
+
+    "pricing": {
+      "title": "Pricing Plans",
+      "basic": {
+          "title": "Basic Plan",
+          "price": "HKD 50",
+          "description": "Purchase 100 minutes of playtime (Valid for 3 years)",
+          "button": "Buy Now"
+      }
+  },
+
+  "referral": {
+        "title": "User Development Program",
+        "intro": "SonicHealer invites all users to participate in the co-development program, creating sustainable passive income through the referral mechanism and achieving long-term wealth growth.",
+        "mechanism": {
+            "title": "Reward Mechanism",
+            "first_level": {
+                "title": "First Level",
+                "description": "After successfully referring a new user, you will receive 20% of their consumption amount as a reward."
+            },
+            "second_level": {
+                "title": "Second Level",
+                "description": "When the user you referred refers new members, you will receive 10% of their consumption amount as a reward."
+            }
+        },
+        "win_win": {
+            "title": "Win-Win Model",
+            "description": "This program allows each participant to accumulate wealth by expanding their network. As the referral network grows, your earnings will gradually increase. If your referrals actively participate and develop the referral mechanism, your income will be even more substantial.",
+            "commitment": "SonicHealer is committed to building a sustainable and steady growth cooperation mechanism, allowing every participant to achieve long-term personal wealth accumulation while sharing the results."
+        },
+        "simulation": {
+            "title": "Income Simulation Case",
+            "case_title": "Mr. A's income forecast with 3 new referrals per month",
+            "assumptions": "Assumptions:",
+            "assumption1": "• Mr. A refers 3 new users each month",
+            "assumption2": "• Each user spends $100 per month",
+            "assumption3": "• Each referrer also refers 3 new members",
+            "table": {
+                "month": "Month",
+                "first_level": "First Level Income",
+                "second_level": "Second Level Income",
+                "monthly_total": "Monthly Total Income",
+                "cumulative_total": "Cumulative Total Income"
+            },
+            "month1": "First Month",
+            "month2": "Second Month",
+            "month3": "Third Month",
+            "month4": "Fourth Month",
+            "month5": "Fifth Month",
+            "month6": "Sixth Month",
+            "result_title": "Six-Month Results Forecast:",
+            "result_description": "After continuously referring for 6 months, monthly income can reach $7,650, with a cumulative total income of $12,330. This demonstrates the income growth potential brought by the expansion of the referral network!"
+        }
+    },
+
+    "start": {
+      "title": "Get Started",
+      "subtitle": "Download SonicHealer now and start your health journey!",
+      "description": "Choose your preferred platform to download and enjoy 100 minutes of free trial:",
+      "android_title": "Android Download",
+      "google_play_alt": "Get it on Google Play",
+      "ios_title": "iOS Download",
+      "app_store_alt": "Download on App Store",
+      "notice_title": "Important Notes",
+      "notice1": "This application is for relaxation purposes only. If you have serious physical or mental illnesses, please seek professional medical assistance.",
+      "notice2": "The principle of this application is sound energy regulating meridians, which is based on Chinese medicine theory and may not be recognized by Western medicine. Please use your own judgment."
+  },
+
+  "about": {
+    "title": "About",
+    "description": "SonicHealer is created by Hong Kong True Health Company, aiming to provide the simplest and fastest energy audio transmission to alleviate the suffering of those in need."
+},
+
+"faq": {
+  "title": "FAQs",
+  "loading": "Loading..."
+},
+
+"login": {
+  "title": "Login",
+  "email_label": "Email",
+  "email_placeholder": "Enter your email",
+  "password_label": "Password",
+  "password_placeholder": "Enter your password",
+  "submit_button": "Login"
+},
+
+"footer": {
+  "title": "SonicHealer",
+  "copyright": "True Health Company © 2023",
+  "privacy_policy": "Privacy Policy",
+  "terms_of_service": "Terms of Service",
+  "contact_us": "Contact Us"
+}
+
+>>>>>>> saved-commits
 
   }

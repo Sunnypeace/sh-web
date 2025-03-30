@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資料輸入表單</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">福門玄學 - 簡批八字</h2>
+        <form id="userForm">
+            <div class="person">
+                <!-- <h3>個人資料 1</h3> -->
+                <div class="gender-select">
+                    <label class="left">性別：</label>
+                    <div class="right">
+                        <label><input type="radio" name="gender1" value="male" checked> 男</label>
+                        <label><input type="radio" name="gender1" value="female"> 女</label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="name1">姓名：</label>
+                    <div class="right">
+                        <input type="text" id="name1" name="name1" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left">日期類型：</label>
+                    <div class="right">
+                        <label><input type="radio" name="dateType1" value="solar" checked> 西曆</label>
+                        <label><input type="radio" name="dateType1" value="lunar"> 農曆</label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="birthdate1">出生日期：</label>
+                    <div class="right">
+                        <input type="date" id="birthdate1" name="birthdate1" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="birthtime1">出生時間：</label>
+                    <div class="right">
+                        <input type="time" id="birthtime1" name="birthtime1">
+                    </div>
+                </div>
+            </div>
+
+        
+                <div class="input-row">
+                    <label class="left" for="phone">聯絡 TEL：</label>
+                    <div class="right">
+                        <input type="text" id="phone" name="phone" required>
+                        <span class="error" id="phoneError"></span>  </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="email">聯絡Email：</label>
+                    <div class="right">
+                        <input type="email" id="email" name="email" required>
+                        <span class="error" id="emailError"></span>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="othermatter">其他事項：</label>
+                    <div class="right">
+                        <textarea id="othermatterbz" name="othermatter" rows="3" placeholder="例如：男性無出生時間"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="submit-button">提交</button>
+            </div>
+        </form>
+    </div>
+     <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // <--- THIS IS CRUCIAL. Put it at the VERY beginning
+
+            let phone = document.getElementById('phone');
+            let email = document.getElementById('email');
+            let phoneError = document.getElementById('phoneError');
+            let emailError = document.getElementById('emailError');
+
+            phoneError.textContent = "";
+            emailError.textContent = "";
+
+            let valid = true;
+
+            if (!phone.value.match(/^\d{10,15}$/)) {
+                phoneError.textContent = "請輸入有效的電話號碼 (10-15 位數字)";
+                valid = false;
+            }
+
+            if (!email.value.match(/^\S+@\S+\.\S+$/)) {
+                emailError.textContent = "請輸入有效的電子郵件地址";
+                valid = false;
+            }
+
+            if (valid) {
+                let formData = {
+                formType: "simpleForm", // Add formType here
+                gender1: document.querySelector('input[name="gender1"]:checked').value,
+                name1: document.getElementById('name1').value,
+                dateType1: document.querySelector('input[name="dateType1"]:checked').value,
+                birthdate1: document.getElementById('birthdate1').value,
+                birthtime1: document.getElementById('birthtime1').value,
+                othermatterbz: document.getElementById('othermatterbz').value, 
+                phone: phone.value,
+                email: email.value
+            };
+
+
+          console.log("Data being sent:", formData);
+
+                
+          const hostUrl = `${window.location.protocol}//${window.location.hostname}`;
+            console.log("Host URL:", hostUrl);
+                
+            // const hostUrl = `${window.location.protocol}//${window.location.hostname}`
+             const apiUrl = `${hostUrl}:3003/send-email`;
+
+            console.log("API URL:", apiUrl); // Debugging output
+
+//            Host URL: http://localhost
+//sendemail-bz-one.html:122 API URL: http://localhost:3003/send-email
+
+                // Send data via Fetch API (modify URL to your backend)
+              fetch("http://192.168.9.102:3003/send-email", { // Use your backend's external port (3003)
+              //fetch(apiUrl, {  // Use your backend's external port (3003)
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    // body: jsonData
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(responseData => alert(responseData.message))
+                .catch(error => console.error("Error:", error));
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: lightpink;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        .title {
+            color: blue;
+            text-align: center;
+        }
+        .person {
+            margin-bottom: 20px;
+            padding: 5px;
+            background-color: rgb(202, 236, 236);
+            border-radius: 10px;
+        }
+        .gender-select, .input-row {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 10px; /* Add spacing between rows */
+        }
+        .left {
+            width: 90px; /* Set a fixed width for labels */
+            text-align: right;
+            padding-right: 5px;
+        }
+        .right {
+            flex: 1; /* Allow input fields to take up remaining space */
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .date-type-select { /* Style for the date type radios */
+            display: inline-flex; /* Use inline flex to keep radios together */
+            gap: 10px; /* Add some space between the radio buttons */
+            align-items: center;
+        }
+        h3 {
+            text-align: center;
+            font-size: 1.1em;
+           }
+
+ .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    margin: 20px 0px 20px 0px;
+
+  }
+
+ .submit-button {
+    background-color: blue; /* Blue color */
+    color: white; /* White text */
+    font-size: 19px; /* Big size */
+    padding: 5px 20px; /* Larger padding */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html>

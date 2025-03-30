@@ -1,0 +1,187 @@
+{
+    "title": "聲脈通",
+    "nav": {
+      "intro": "介紹",
+      "features": "功能",
+      "unique": "獨特之處",
+      "usage": "使用方法",
+      "pricing": "定價",
+      "referral": "共同發展方案",
+      "start": "立即开始",
+      "about": "關於",
+      "faq": "常見問題",
+      "login": "登入",
+      "language": "語言",
+      "language_hk": "繁體中文",
+      "language_cn": "簡體中文",
+      "language_en": "英文"
+    },
+    "intro": {
+      "title": "聲脈通 介紹",
+      "description": "聲脈通 是一個以聲音能量直接啟動人體內經脈運行，疏通經脈和消除經脈內的負能量，從而達到舒緩或消除身體毛病的效果。"
+    },
+    "features": {
+        "title": "功能包括",
+        "emotion": {
+            "title": "心智/情緒:",
+            "depression": "抑鬱症",
+            "phobia": "恐懼症",
+            "anxiety": "焦慮症",
+            "insomnia": "失眠",
+            "concentration": "精神不能集中",
+            "hyperactivity": "過度活躍",
+            "confidence": "沒有自信"
+        },
+        "pain": {
+            "title": "痛楚:",
+            "headache": "頭痛",
+            "neck": "頸痛",
+            "back": "背痛",
+            "waist": "腰痛",
+            "knee": "膝頭痛",
+            "foot": "腳板痛"
+        },
+        "illness": {
+            "title": "疾病:",
+            "cold": "感冒 病毒",
+            "qi": "中氣不足",
+            "indigestion": "食滯",
+            "constipation": "便秘",
+            "stomach": "胃痛",
+            "intestine": "腸臟虛弱",
+            "kidney": "腎虛",
+            "liver": "肝熱"
+        }
+    },
+
+    "unique": {
+        "title": "我們獨特之處",
+        "features": {
+            "sound_therapy": {
+                "title": "聲音能量療法",
+                "description": "我們並非以傳統的音樂節奏或特定頻率刺激神經，而是運用獨特的聲音能量，直接作用於您的經脈，疏通氣血，達到身心平衡。"
+            },
+            "music_selection": {
+                "title": "多樣化的音樂選擇",
+                "description": "您可以自由選擇喜愛的音樂風格，搭配我們的聲音能量功能，無論您來自哪個國家、喜好如何，都能找到最適合您的療癒方式。"
+            },
+            "infrasound": {
+                "title": "次聲頻選擇",
+                "description": "這是人類聽覺以外的聲頻，在我們程式發放治療能量時不會騷擾在場人士，也適合夜間幫助失眠情況。"
+            },
+            "hearing_impaired": {
+                "title": "聽覺有問題人士也可以使用",
+                "description": "因為我們程式發放的能量是直接刺激人體經脈，不需要經過耳朵大腦感受旋律。"
+            }
+        }
+    },
+
+    "usage": {
+        "title": "使用方法",
+        "steps": {
+            "download": "下載並安裝「聲脈通 」應用程式。",
+            "register": "註冊您的電子郵件，即可享有100分鐘的免費試用。",
+            "select_music": "選擇您喜歡的音樂，搭配我們的聲音能量功能。",
+            "enjoy": "享受聲音能量帶來的身心舒緩體驗。"
+        },
+        "best_practices": {
+            "title": "想達到良好效果：",
+            "headphones": "可以帶上耳機聆聽能量音樂。",
+            "speaker": "或者把手機喇叭位置對著患處，使聲波能量直接射向患處。"
+        }
+    },
+    "pricing": {
+      "title": "付費方案",
+      "basic": {
+          "title": "基本方案",
+          "price": "50港幣",
+          "description": "可購買100分鐘的播放時間 (有效期三年)",
+          "button": "立即購買"
+      }
+  },
+
+  "referral": {
+        "title": "用戶共同發展方案",
+        "intro": "聲脈通誠邀所有用戶參與共同發展計劃，透過推薦機制創造可持續的被動收入，實現長遠的財富增長。",
+        "mechanism": {
+            "title": "回饋機制",
+            "first_level": {
+                "title": "第一層",
+                "description": "成功推薦新用戶後，可獲得該用戶消費金額的20%作為回饋。"
+            },
+            "second_level": {
+                "title": "第二層",
+                "description": "第一層推薦的用戶再次推薦新成員，您可獲得其消費金額的10%回饋。"
+            }
+        },
+        "win_win": {
+            "title": "共贏模式",
+            "description": "此計劃讓每位參與者透過拓展人脈，不斷積累財富。隨著推薦網絡的擴展，您的收益將逐步增長。若您的推薦對象積極參與並發展推薦機制，您的收入將更加可觀。",
+            "commitment": "聲脈通致力於打造可持續、穩健成長的合作機制，讓每一位參與者在共享成果的同時，實現個人財富的長期累積。"
+        },
+        "simulation": {
+            "title": "收益模擬案例",
+            "case_title": "A先生每月新增3位推薦的收益預測",
+            "assumptions": "假設條件：",
+            "assumption1": "• A先生每月推薦 3 位新用戶",
+            "assumption2": "• 每位用戶月消費 $100",
+            "assumption3": "• 每位推薦者也推薦 3 位新成員",
+            "table": {
+                "month": "月份",
+                "first_level": "第一層收益",
+                "second_level": "第二層收益",
+                "monthly_total": "月度總收益",
+                "cumulative_total": "累積總收益"
+            },
+            "month1": "第一個月",
+            "month2": "第二個月",
+            "month3": "第三個月",
+            "month4": "第四個月",
+            "month5": "第五個月",
+            "month6": "第六個月",
+            "result_title": "半年成果預測：",
+            "result_description": "持續推薦6個月後，月收入可達 $7,650，累積總收益達到 $12,330。這展示了推薦網絡擴展帶來的收益增長潛力！"
+        }
+    },
+    "start": {
+      "title": "立即使用",
+      "subtitle": "立即下載「聲脈通」，開始您的健康之旅！",
+      "description": "選擇您喜歡的平台下載，即可享受100分鐘免費體驗：",
+      "android_title": "Android 用戶下載",
+      "google_play_alt": "在 Google Play 下載",
+      "ios_title": "iOS 用戶下載",
+      "app_store_alt": "在 App Store 下載",
+      "notice_title": "注意事項",
+      "notice1": "本應用程式僅供舒緩身心之用，如有嚴重身心疾病，請尋求專業醫療協助。",
+      "notice2": "本應用程式的原理為聲音能量調節經脈，惟此為中醫理論，西醫未必認同，請用戶自行判斷。"
+  },
+
+  "about": {
+    "title": "關於",
+    "description": "聲脈通 是由香港真健康公司 創造,希望以最簡單快速的能量音頻傳輸來舒緩有需要人士的病苦."
+},
+
+"faq": {
+  "title": "常見問題",
+  "loading": "載入中..."
+},
+
+"login": {
+  "title": "登入",
+  "email_label": "電子郵件",
+  "email_placeholder": "輸入您的電子郵件",
+  "password_label": "密碼",
+  "password_placeholder": "輸入您的密碼",
+  "submit_button": "登入"
+},
+
+"footer": {
+  "title": "SonicHealer - 聲脈通",
+  "copyright": "香港真健康公司 © 2023",
+  "privacy_policy": "隱私政策",
+  "terms_of_service": "服務條款",
+  "contact_us": "聯繫我們"
+}
+
+
+ }
