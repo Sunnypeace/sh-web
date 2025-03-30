@@ -57,6 +57,16 @@ app.options("*", (req, res) => {
 app.use(bodyParser.json());
 // const upload = multer();
 
+// Add test endpoint
+app.get('/test', (req, res) => {
+    logger.info('Test endpoint accessed');
+    res.json({
+        status: 'success',
+        message: 'API is working',
+        timestamp: new Date().toISOString()
+    });
+});
+
 // app.post("/send-email", upload.none(), async (req, res) => {
 app.post("/send-email", async (req, res) => {
     const formType = req.body.formType;
