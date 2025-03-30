@@ -258,5 +258,10 @@ function runC8(argsArray) {
 //     console.log("Server running on port 3000");
 // });
 
-const PORT = 3000;
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+// const PORT = 3000;
+// app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
