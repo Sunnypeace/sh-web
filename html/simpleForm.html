@@ -113,20 +113,11 @@
           console.log("Data being sent:", formData);
 
                 
-          const hostUrl = `${window.location.protocol}//${window.location.hostname}`;
-            console.log("Host URL:", hostUrl);
-                
-            // const hostUrl = `${window.location.protocol}//${window.location.hostname}`
-             const apiUrl = `${hostUrl}:3003/send-email`;
+         // Update API URL construction
+    const apiUrl = `${window.location.origin}/api/send-email`;
+    console.log("API URL:", apiUrl);
 
-            console.log("API URL:", apiUrl); // Debugging output
-
-//            Host URL: http://localhost
-//sendemail-bz-one.html:122 API URL: http://localhost:3003/send-email
-
-                // Send data via Fetch API (modify URL to your backend)
-              fetch("http://192.168.9.102:3003/send-email", { // Use your backend's external port (3003)
-              //fetch(apiUrl, {  // Use your backend's external port (3003)
+    fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     // body: jsonData

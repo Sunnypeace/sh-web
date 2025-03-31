@@ -12,7 +12,11 @@ let queueCnt =1;
 let queueCntStr = "";
 let saveFilename = "";
 let useremail ="";
-const HOST_IP = process.env.HOST_IP;
+// const HOST_IP = process.env.HOST_IP;
+// get the HOST IP from render.com environment variable
+const HOST_IP = process.env.NODE_ENV === 'production' 
+    ? process.env.RENDER_EXTERNAL_URL 
+    : process.env.HOST_IP;
                 
 
 // Configure Winston with Syslog transport
@@ -35,6 +39,8 @@ const logger = winston.createLogger({
 
 const app = express();  // this must put before the cors
 
+// Add static file serving before other middleware
+app.use(express.static('html')); 
 
 //app.use(cors());
 //✅ Allow specific origins and methods
@@ -58,7 +64,7 @@ app.use(bodyParser.json());
 // const upload = multer();
 
 // Add test endpoint
-app.get('/test', (req, res) => {
+app.get('/api/test', (req, res) => {
     logger.info('Test endpoint accessed');
     res.json({
         status: 'success',
@@ -67,8 +73,10 @@ app.get('/test', (req, res) => {
     });
 });
 
+
 // app.post("/send-email", upload.none(), async (req, res) => {
-app.post("/send-email", async (req, res) => {
+// Update the email endpoint to match the /api prefix
+app.post("/api/send-email", async (req, res) => {
     const formType = req.body.formType;
      logger.info(`Received email request: FormType=${formType} host_ip=${HOST_IP}`);
      //console.log("Received data:", req.body);
@@ -272,7 +280,9 @@ function runC8(argsArray) {
 // app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
 
 // this is to add render.com port
+// Update the port listening section at the bottom
 const port = process.env.PORT || 3000;
-app.listen(port, ()  => {
-    console.log(`Example app listening on port ${port}`)
-  })
+app.listen(port, '0.0.0.0', () => {
+    logger.info(`API server running on port ${port}`);
+    console.log(`API server running on port ${port}`);
+});
