@@ -1,8 +1,9 @@
 # Environment variables
-.env
+#.env
 
 # Docker files
-Dockerfile
+dockerfile
+dockerfile.new
 docker-compose.yml
 default.conf
 startapp.sh

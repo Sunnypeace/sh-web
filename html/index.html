@@ -1,344 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicHealer - 聲脈通</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>福門玄學</title>
     <style>
-        :root {
-            --primary-color: #28a745;
-        }
         body {
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
+            background-color: lightyellow;
         }
-        .navbar {
-            background-color: var(--primary-color);
+
+        h1 {
+            text-align: center;
         }
-        .navbar-brand img {
-            width: 50px;
-            height: 50px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .section-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
+
+        .section1 {
+            margin-top: 10px;
+            text-align: center;
+            padding: 15px; /* 增加 section 內邊距 */
+            background-color: lightgreen;
         }
-        .feature-list {
-            list-style: none;
-            padding-left: 0;
+
+        .section2 {
+            margin-top: 10px;
+            text-align: center;
+            padding: 15px; /* 增加 section 內邊距 */
+            background-color: lightpink;
         }
-        .feature-list li {
-            margin-bottom: 0.5rem;
+
+        .section1 button {
+            margin: 10px; /* 增加按鈕外邊距，使其與描述文字分開 */
+            padding: 10px 20px; /* 增加按鈕內邊距，使其變大 */
+            font-size: 16px;
+            transform: scale(1.1); /* 放大按鈕 1.3 倍 */
+            display: block; /* 讓按鈕獨佔一行 */
+            margin-left: auto; /* 將按鈕置中 */
+            margin-right: auto;
         }
-        section {
-            padding: 4rem 0;
+
+        .section2 button {
+            margin: 10px; /* 增加按鈕外邊距，使其與描述文字分開 */
+            padding: 10px 20px; /* 增加按鈕內邊距，使其變大 */
+            font-size: 16px;
+            transform: scale(1.1); /* 放大按鈕 1.3 倍 */
+            display: block; /* 讓按鈕獨佔一行 */
+            margin-left: auto; /* 將按鈕置中 */
+            margin-right: auto;
         }
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+
+        .pink-text {
+            color: rgb(243, 106, 129);
         }
-        .btn-primary:hover {
-            background-color: #218838;
-            border-color: #218838;
+
+        .blue-text {
+            color: blue;
         }
-        .faq-item {
-            margin-bottom: 1rem;
+
+        .bold-text {
+            font-weight: bold;
+            font-size: large;
         }
-        .faq-question {
-            cursor: pointer;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-        }
-        .faq-answer {
-            padding: 1rem;
-            display: none;
-        }
+
+
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/sk-logo100.png" alt="SonicHealer Logo" class="me-2">
-                SonicHealer
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">功能</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#unique">獨特之處</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#usage">使用方法</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">定价</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partnership">共同發展方案</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#start">立即开始</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">关于</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#login">登录</a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <h1><span class="pink-text">歡迎你來到</span></h1>
+        <h1><span class="blue-text">福門玄學</span></h1>
+
+        <div class="section1">
+            <p>
+                <span class="bold-text">簡批八字：</span><br>
+                提供簡單的八字分析，<br>
+                讓您對自己的運勢有初步的了解。
+            </p>
+            <button onclick="window.location.href='r-sendemail-bz-one.html'">簡批八字 1 人</button> <br>
+        <button onclick="window.location.href='r-sendemail-bz.html'">簡批八字 2 人</button>
         </div>
-    </nav>
 
-    <section id="introduction" class="mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="assets/sh-intro.png" alt="Introduction" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <h2>聲脈通</h2>
-                    <p>聲脈通 是一個以聲音能量直接啟動人體內經脈運行，疏通經脈和消除經脈內的負能量，從而達到舒緩或消除身體毛病的效果。</p>
-                </div>
-            </div>
+
+        <div class="section2">
+            <p>
+                <span class="bold-text">新人結婚擇日資料：</span><br>
+                提供新人結婚擇日服務，<br>
+                挑選良辰吉日，讓您的婚禮順利進行。
+            </p>
+            <button onclick="window.location.href='r-sendemail-wed.html'">提交 新人結婚擇日資料</button>
         </div>
-    </section>
-
-    <section id="features" class="bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">功能包括</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="assets/sh-emotion-section.png" alt="心智/情緒" class="section-image mb-3">
-                            <h3>心智/情緒</h3>
-                            <ul class="feature-list">
-                                <li>抑鬱症</li>
-                                <li>恐懼症</li>
-                                <li>焦慮症</li>
-                                <li>失眠</li>
-                                <li>精神不能集中</li>
-                                <li>過度活躍</li>
-                                <li>沒有自信</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="assets/sh-pain-section.png" alt="痛楚" class="section-image mb-3">
-                            <h3>痛楚</h3>
-                            <ul class="feature-list">
-                                <li>頭痛</li>
-                                <li>頸痛</li>
-                                <li>背痛</li>
-                                <li>腰痛</li>
-                                <li>膝頭痛</li>
-                                <li>腳板痛</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="assets/sh-sick-section.png" alt="疾病" class="section-image mb-3">
-                            <h3>疾病</h3>
-                            <ul class="feature-list">
-                                <li>感冒 病毒</li>
-                                <li>中氣不足</li>
-                                <li>食滯</li>
-                                <li>便秘</li>
-                                <li>胃痛</li>
-                                <li>腸臟虛弱</li>
-                                <li>腎虛</li>
-                                <li>肝熱</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="unique">
-        <div class="container">
-            <h2 class="text-center mb-5">我們獨特之處</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h3>聲音能量療法</h3>
-                    <p>我們並非以傳統的音樂節奏或特定頻率刺激神經，而是運用獨特的聲音能量，直接作用於您的經脈，疏通氣血，達到身心平衡。</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h3>多樣化的音樂選擇</h3>
-                    <p>您可以自由選擇喜愛的音樂風格，搭配我們的聲音能量功能，無論您來自哪個國家、喜好如何，都能找到最適合您的療癒方式。</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h3>次聲頻選擇</h3>
-                    <p>這是人類聽覺以外的聲頻， 在我們 程式發放 治療能量時不會騷擾 在場人士，也適合 夜間 幫助 失眠 情況。</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h3>聽覺有問題 人士也可以使用</h3>
-                    <p>因為我們程式發放的能量是直接刺激人體 經脈， 不需要經過耳朵大腦感受旋律。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="usage" class="bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">使用方法</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item">下載並安裝「聲脈舒緩」應用程式。</li>
-                        <li class="list-group-item">註冊您的電子郵件，即可享有100分鐘的免費試用。</li>
-                        <li class="list-group-item">選擇您喜歡的音樂，搭配我們的聲音能量功能。</li>
-                        <li class="list-group-item">享受聲音能量帶來的身心舒緩體驗。</li>
-                    </ol>
-                    <div class="mt-4">
-                        <h4>想達到良好效果</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item">可以帶上耳塞 聆聽能量音樂。</li>
-                            <li class="list-group-item">或者把手機 喇叭 位置對著 患處 ，使 聲波能量直接射向患處。</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing">
-        <div class="container text-center">
-            <h2 class="mb-5">付費方案</h2>
-            <div class="card mx-auto" style="max-width: 400px;">
-                <div class="card-body">
-                    <h3 class="card-title">標準方案</h3>
-                    <p class="card-text display-4">50港幣</p>
-                    <p class="card-text">100分鐘的播放時間</p>
-                    <button class="btn btn-primary">立即購買</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="partnership" class="bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">用戶共同發展方案</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3>推薦獎勵計劃</h3>
-                            <p>推薦您的朋友使用「聲脈通」，您將獲得兩層的推薦回饋：</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">第一層：您推薦的用戶消費，您可獲得20%的回饋。</li>
-                                <li class="list-group-item">第二層：您推薦的用戶再推薦其他用戶消費，您可獲得10%的回饋。</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="start">
-        <div class="container text-center">
-            <h2 class="mb-4">立即使用</h2>
-            <p class="mb-4">立即下載「聲脈舒緩」，開啟您的身心靈療癒之旅！</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <a href="#" class="btn btn-primary btn-lg mb-3 w-100">下載應用程式</a>
-                    <div class="alert alert-info">
-                        <h4>注意事項</h4>
-                        <p>本應用程式僅供舒緩身心之用，如有嚴重身心疾病，請尋求專業醫療協助。</p>
-                        <p>本應用程式的原理為聲音能量調節經脈，惟此為中醫理論，西醫未必認同，請用戶自行判斷。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="bg-light">
-        <div class="container text-center">
-            <h2 class="mb-4">关于</h2>
-            <p>聲脈通 是由香港真健康公司 創造,希望以最簡單快速的能量音頻傳輸來舒緩有需要人士的病苦。</p>
-        </div>
-    </section>
-
-    <section id="faq">
-        <div class="container">
-            <h2 class="text-center mb-5">常見問題</h2>
-            <div id="faqContainer" class="row justify-content-center">
-                <!-- FAQ items will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <section id="login" class="bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title text-center mb-4">登录</h2>
-                            <form>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="電子郵件" required>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" placeholder="密碼" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">登录</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load FAQ data
-        fetch('data/faq.json')
-            .then(response => response.json())
-            .then(data => {
-                const faqContainer = document.getElementById('faqContainer');
-                data.faqs.forEach(faq => {
-                    const faqItem = document.createElement('div');
-                    faqItem.className = 'col-md-8 faq-item';
-                    faqItem.innerHTML = `
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <h4>${faq.question}</h4>
-                        </div>
-                        <div class="faq-answer">
-                            <p>${faq.answer}</p>
-                        </div>
-                    `;
-                    faqContainer.appendChild(faqItem);
-                });
-            });
-
-        // Toggle FAQ answers
-        function toggleAnswer(element) {
-            const answer = element.nextElementSibling;
-            const isVisible = answer.style.display === 'block';
-            answer.style.display = isVisible ? 'none' : 'block';
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    </div>
 </body>
+
 </html>

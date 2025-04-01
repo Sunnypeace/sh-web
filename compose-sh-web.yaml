@@ -1,0 +1,14 @@
+
+services:
+  web-server:
+    image: sh-webserv
+    container_name: shc_webserv
+    build:
+      context: .  # Current directory (where docker-compose.yml is)
+      dockerfile: dockerfile.new
+    ports:
+      - "3003:3000"
+    privileged: true
+
+    stdin_open: true
+    tty: true

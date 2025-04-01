@@ -113,8 +113,11 @@
           console.log("Data being sent:", formData);
 
                 
+          const hostUrl = `${window.location.protocol}//${window.location.hostname}`;
+            console.log("Host URL:", hostUrl);
+                
          // Update API URL construction
-            const apiUrl = `${window.location.origin}/api/send-email`;
+         const apiUrl = `${window.location.origin}/api/send-email`;
             console.log("API URL:", apiUrl);
 
             fetch(apiUrl, {

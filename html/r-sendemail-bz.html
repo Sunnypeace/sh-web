@@ -45,7 +45,42 @@
                 </div>
             </div>
 
-        
+            <div class="person">
+                <!-- <h3>個人資料 2</h3> -->
+                <div class="gender-select">
+                    <label class="left">性別：</label>
+                    <div class="right">
+                        <label><input type="radio" name="gender2" value="male"> 男</label>
+                        <label><input type="radio" name="gender2" value="female" checked> 女</label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="name2">姓名：</label>
+                    <div class="right">
+                        <input type="text" id="name2" name="name2" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left">日期類型：</label>
+                    <div class="right">
+                        <label><input type="radio" name="dateType2" value="solar" checked> 西曆</label>
+                        <label><input type="radio" name="dateType2" value="lunar"> 農曆</label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="birthdate2">出生日期：</label>
+                    <div class="right">
+                        <input type="date" id="birthdate2" name="birthdate2" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label class="left" for="birthtime2">出生時間：</label>
+                    <div class="right">
+                        <input type="time" id="birthtime2" name="birthtime2">
+                    </div>
+                </div>
+            </div>
+            <div>
                 <div class="input-row">
                     <label class="left" for="phone">聯絡 TEL：</label>
                     <div class="right">
@@ -98,23 +133,37 @@
 
             if (valid) {
                 let formData = {
-                formType: "simpleForm", // Add formType here
+                formType: "BZform", // Add formType here
                 gender1: document.querySelector('input[name="gender1"]:checked').value,
                 name1: document.getElementById('name1').value,
                 dateType1: document.querySelector('input[name="dateType1"]:checked').value,
                 birthdate1: document.getElementById('birthdate1').value,
                 birthtime1: document.getElementById('birthtime1').value,
-                othermatterbz: document.getElementById('othermatterbz').value, 
+                gender2: document.querySelector('input[name="gender2"]:checked').value,
+                name2: document.getElementById('name2').value,
+                dateType2: document.querySelector('input[name="dateType2"]:checked').value,
+                birthdate2: document.getElementById('birthdate2').value,
+                birthtime2: document.getElementById('birthtime2').value,                
+                othermatterbz: document.getElementById('othermatterbz').value,                
                 phone: phone.value,
                 email: email.value
             };
 
 
-          console.log("Data being sent:", formData);
+          console.log("Data being sent :", formData);
+          
+          let nameCtl = formData.name1; // Retrieve name1 from formData
+          nameCtl = nameCtl.trim();
+
+          console.log("Name1 value:", nameCtl); 
+          if (name1 === "checkrecord") {
+            window.location.href = "aa.html"; // Redirect to c8.html
+            return; // Stop further execution
+        }
 
                 
          // Update API URL construction
-            const apiUrl = `${window.location.origin}/api/send-email`;
+         const apiUrl = `${window.location.origin}/api/send-email`;
             console.log("API URL:", apiUrl);
 
             fetch(apiUrl, {

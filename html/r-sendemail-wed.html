@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結婚擇日表格提交</title>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="container">
+                <h2>提交您的結婚擇日信息</h2>
+            <form id="weddingForm">
+                <!-- <input type="hidden" name="formType" value="weddingForm"> -->
+                    <h3>新人信息</h3>
+                     <label for="maleName">男(姓名)：</label>
+                    <input type="text" id="maleName" required><br><br>
+        
+                     <label for="femaleName">女(姓名)：</label>
+                    <input type="text" id="femaleName" required><br><br>
+
+                <h3>出生日期</h3>      
+                <div class="row">
+                <div class="col-1"><label>男：</label></div>
+                    <div class="col-2">
+                    <div class="date-type">
+                        <label><input type="radio" name="maleDateType" value="solar" checked> 西曆</label>
+                        <label><input type="radio" name="maleDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="maleBirthDate" required>
+                    <!-- <input type="text" id="maleBirthTime" placeholder="時(AM/PM)"> -->
+                    <input type="time" id="maleBirthTime" name="maleBirthTime">
+                    </div>
+                </div>
+                <!-- 女 -->
+                <div class="row">
+                  <div class="col-1"><label>女：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="femaleDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="femaleDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="femaleBirthDate" required>
+                    <!-- <input type="text" id="femaleBirthTime" placeholder="時(AM/PM)"> -->
+                    <input type="time" id="femaleBirthTime" name="femaleBirthTime">
+
+                  </div>
+                </div>
+              
+                <br><h3>長輩出生日期 (只需年月日)</h3>
+              
+                <!-- 男父 -->
+                <div class="row">
+                  <div class="col-1"><label>男父：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="maleFatherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="maleFatherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="maleFatherBirthDate">
+                  </div>
+                </div>
+              
+                <!-- 男母 -->
+                <div class="row">
+                  <div class="col-1"><label>男母：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="maleMotherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="maleMotherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="maleMotherBirthDate">
+                  </div>
+                </div>
+              
+                <!-- 女父 -->
+                <div class="row">
+                  <div class="col-1"><label>女父：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="femaleFatherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="femaleFatherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="femaleFatherBirthDate">
+                  </div>
+                </div>
+              
+                <!-- 女母 -->
+                <div class="row">
+                  <div class="col-1"><label>女母：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="femaleMotherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="femaleMotherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="femaleMotherBirthDate">
+                  </div>
+                </div>
+              
+                <br><h3>同住長輩</h3>
+              
+                <!-- 公公 -->
+                <div class="row">
+                  <div class="col-1"><label>公公：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="grandfatherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="grandfatherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="grandfatherBirthDate">
+                  </div>
+                </div>
+              
+                <!-- 婆婆 -->
+                <div class="row">
+                  <div class="col-1"><label>婆婆：</label></div>
+                  <div class="col-2">
+                    <div class="date-type">
+                      <label><input type="radio" name="grandmotherDateType" value="solar" checked> 西曆</label>
+                      <label><input type="radio" name="grandmotherDateType" value="lunar"> 農曆</label>
+                    </div>
+                    <input type="date" id="grandmotherBirthDate">
+                  </div>
+                </div>
+
+                <br><h3>其他要求</h3>
+                <label>計劃的結婚佳期：</label>
+                <input type="text" id="weddingPeriod" placeholder="例如：2019/10 - 2020/3"><br><br>
+    
+                <label>是否需要特定日期：</label>
+                <select id="preferredDays">
+                    <option value="SAT_SUN">SAT/SUN</option>
+                    <option value="MON_FRI">MON-FRI</option>
+                    <option value="FRI_SUN">FRI_SAT_SUN</option>
+                    <option value="ANY">任何日期</option>
+                </select><br><br>
+    
+                <label>已選結婚日期 (如有)：</label>
+                <input type="date" id="fixedWeddingDate"><br><br>
+    
+                <label for="otherMatters">其他事項：</label><br>
+                <textarea class="othermatters" id="otherMatters" rows="4" cols="50"></textarea><br><br>
+
+
+                
+                <br><h3>聯絡方法</h3>
+                <label for="phone">聯絡電話：</label>
+                <input type="tel" id="phone" required pattern="\d{10,15}" title="請輸入有效的電話號碼 (10-15 位數字)"><br><br>
+                <span class="error" id="phoneError"></span>
+
+                <label for="email">聯絡 Email：</label>
+                <input type="email" id="email" required><br><br>
+                <span class="error" id="emailError"></span>
+
+                <div class="button-container">
+                    <button type="submit" class="submit-button">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <script>
+        document.getElementById('weddingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+        // document.querySelectorAll("form").forEach(form => {
+        //     form.addEventListener("submit", function(event) {
+        //         event.preventDefault();
+                
+        
+            let phone = document.getElementById('phone');
+            let email = document.getElementById('email');
+            let phoneError = document.getElementById('phoneError');
+            let emailError = document.getElementById('emailError');
+    
+            phoneError.textContent = "";
+            emailError.textContent = "";
+    
+            let valid = true;
+    
+            if (!phone.value.match(/^\d{10,15}$/)) {
+                phoneError.textContent = "請輸入有效的電話號碼 (10-15 位數字)";
+                valid = false;
+            }
+    
+            if (!email.value.match(/^\S+@\S+\.\S+$/)) {
+                emailError.textContent = "請輸入有效的電子郵件地址";
+                valid = false;
+            }
+    
+            if (valid) {
+                let formData = {
+                    formType:  "weddingForm", // Add formType here
+                    maleName: document.getElementById('maleName').value,
+                    femaleName: document.getElementById('femaleName').value,
+                    maleBirthDate: document.getElementById('maleBirthDate').value,
+                    maleBirthTime: document.getElementById('maleBirthTime').value,
+                    maleDateType: document.querySelector('input[name="maleDateType"]:checked').value,
+                    femaleBirthDate: document.getElementById('femaleBirthDate').value,
+                    femaleBirthTime: document.getElementById('femaleBirthTime').value,
+                    femaleDateType: document.querySelector('input[name="femaleDateType"]:checked').value,
+                    maleFatherBirthDate: document.getElementById('maleFatherBirthDate').value,
+                    maleFatherDateType: document.querySelector('input[name="maleFatherDateType"]:checked').value,
+                    maleMotherBirthDate: document.getElementById('maleMotherBirthDate').value,
+                    maleMotherDateType: document.querySelector('input[name="maleMotherDateType"]:checked').value,
+                    femaleFatherBirthDate: document.getElementById('femaleFatherBirthDate').value,
+                    femaleFatherDateType: document.querySelector('input[name="femaleFatherDateType"]:checked').value,
+                    femaleMotherBirthDate: document.getElementById('femaleMotherBirthDate').value,
+                    femaleMotherDateType: document.querySelector('input[name="femaleMotherDateType"]:checked').value,
+                    grandfatherBirthDate: document.getElementById('grandfatherBirthDate').value,
+                    grandfatherDateType: document.querySelector('input[name="grandfatherDateType"]:checked').value,
+                    grandmotherBirthDate: document.getElementById('grandmotherBirthDate').value,
+                    grandmotherDateType: document.querySelector('input[name="grandmotherDateType"]:checked').value,
+                    weddingPeriod: document.getElementById('weddingPeriod').value,
+                    preferredDays: document.getElementById('preferredDays').value,
+                    fixedWeddingDate: document.getElementById('fixedWeddingDate').value,
+                    otherMatters: document.getElementById('otherMatters').value,
+                    phone: phone.value,
+                    email: email.value
+                  };
+
+                  console.log("Data being sent:", formData);
+
+        // Update API URL construction
+        const apiUrl = `${window.location.origin}/api/send-email`;
+            console.log("API URL:", apiUrl);
+
+            fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    // body: jsonData
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(responseData => alert(responseData.message))
+                .catch(error => console.error("Error:", error));
+            }
+        });
+    </script>
+    
+
+  <style>
+           body {
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+.form-container {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between sections */
+    border: 1px solid blue; /* Blue border */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px; /* Optional: Limit width */
+    background-color: #f8f8ff; /* Optional: Light background */
+    margin-left: 5%;
+    }
+    
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+  
+    .col-1 {
+      flex: 20%; /* First column (label) */
+      text-align: right;
+      font-weight: bold;
+    }
+  
+    .col-2 {
+      flex: 80%; /* Second column (radio + inputs) */
+      display: flex;
+      flex-wrap: wrap; /* Wrap if needed */
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .date-type {
+      display: flex;
+      gap: 10px;
+    }
+  
+    input[type="date"] {
+      width: 70%;
+    }
+  
+    input[type="text"] {
+      width: 30%;
+    }
+  
+    h3 {
+      margin-top: 20px;
+      font-style: bold;
+      color: red;
+    }
+
+    .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    margin: 20px 0px 20px 0px;
+
+  }
+    .submit-button {
+    background-color: blue; /* Blue color */
+    color: white; /* White text */
+    font-size: 23px; /* Big size */
+    padding: 15px 30px; /* Larger padding */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .othermatters{
+    width : 90%;
+  }
+
+  </style>
+</body>
+</html>
